@@ -50,7 +50,7 @@ const SectionLargeSlider: FC<SectionLargeSliderProps> = ({
       <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-6 md:gap-8 mt-8 md:mt-0">
         {authorPosts != undefined && posts.map((item, index) => {
           return (
-            <SubCard3
+            <SubCard2
               key={index}
               size="large"
               posts={item}
