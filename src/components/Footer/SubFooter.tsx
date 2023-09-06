@@ -41,7 +41,7 @@ const SubFooter: React.FC<SubFooterProps> = ({ authors, menus }) => {
   return (
     <div className="nc-Footer bg-white dark:bg-slate-900 justify-end relative py-8 lg:py-8 border-t border-neutral-200 dark:border-neutral-700">
         <div className="flex flex-col items-center text-center justify-center">
-            <div className="flex">
+            <div className="flex mb-5">
                 {renderLogo(authors, darkmodeState['isDarkMode'])}
             </div>
             <div className="flex flex-wrap">

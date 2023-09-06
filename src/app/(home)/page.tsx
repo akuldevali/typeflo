@@ -11,7 +11,7 @@ import { useGlobalContext } from "@/context/GlobalContextProvider";
 import IconButton from '@mui/material/IconButton';
 import dynamic from 'next/dynamic';
 
-var inPage:any = 0, fnPage:any = 10, postsLoc:any = [], icPage:any = 0, fcPage:any = 0, catVal: any = "-1", maxPost: any = 11, hostname:any;
+var inPage:any = 0, fnPage:any = 10, postsLoc:any = [], icPage:any = 0, fcPage:any = 0, catVal: any = "-1", maxPost: any = 10, hostname:any;
 
 const SectionArticles = dynamic(() => import('@/app/(home)/SectionsArticles'), {
   ssr: false,
@@ -115,7 +115,7 @@ const PageHome = (props: any) => {
 
     const {data,error} = await supabaseClient
       .from('posts')
-      .select('id, title, created_at, featured_imghd, href, post, authors!inner(*), category!inner(*)')
+      .select('id, title, created_at, featured_imghd, href, postClamp, reading_time, authors!inner(*), category!inner(*)')
       .eq('authors.username', domain1)
       .eq('authors.cus_domain', domain2)
       .range(inPage, fnPage)
@@ -157,7 +157,7 @@ const PageHome = (props: any) => {
     
     const {data,error} = await supabaseClient
       .from('posts')
-      .select('id, title, created_at, featured_imghd, href, post, authors!inner(*), category!inner(*)')
+      .select('id, title, created_at, featured_imghd, href, postClamp, reading_time, authors!inner(*), category!inner(*)')
       .eq('authors.username', domain1)
       .eq('authors.cus_domain', domain2)
       .eq('category.id', catId)

@@ -8,7 +8,6 @@ import PostTypeFeaturedIcon from "@/components/PostTypeFeaturedIcon/PostTypeFeat
 import PostFeaturedMedia from "@/components/PostFeaturedMedia/PostFeaturedMedia";
 import Link from "next/link";
 import Image from "next/image";
-import htmltoText from "@/utils/htmltoText";
 import { useReadingTime } from "react-hook-reading-time";
 
 export interface Card9Props {
@@ -26,10 +25,8 @@ const SubCard9: FC<Card9Props> = ({
   postHref,
   hoverClass = "",
 }) => {
-  const { title, featured_imgsd, created_at, category, post } = posts;
+  const { title, featured_imgsd, created_at, category, reading_time } = posts;
   const [date, setDate] = useState(new Date(created_at).toLocaleString('en-us',{month:'short', day:'numeric', year:'numeric'}));
-
-  const { text } = useReadingTime(htmltoText(post));
 
   const renderMeta = () => {
     return (
@@ -44,7 +41,7 @@ const SubCard9: FC<Card9Props> = ({
             <span className="font-normal truncate">{date}</span>
             <span className="mx-[6px] font-medium">·</span>
             <span className="dark:text-neutral-300">
-              {text}
+              {reading_time}
             </span>
           </div>
         </div>

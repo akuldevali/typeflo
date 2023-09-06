@@ -7,7 +7,6 @@ import PostCardLikeAndComment from "@/components/PostCardLikeAndComment/PostCard
 import PostCardMeta from "@/components/PostCardMeta/PostCardMeta";
 import Image from "next/image";
 import Link from "next/link";
-import htmltoText from "@/utils/htmltoText";
 import { useReadingTime } from "react-hook-reading-time";
 
 export interface Card11Props {
@@ -29,12 +28,11 @@ const SubCard11: FC<Card11Props> = ({
   postTextShow = true,
   onClick,
 }) => {
-  const { title, featured_imghd, href, created_at, category, excerpt } = post;
+  const { title, featured_imghd, href, created_at, category, excerpt, postClamp, reading_time } = post;
   const [date, setDate] = useState(new Date(created_at).toLocaleString('en-us',{month:'short', day:'numeric', year:'numeric'}));
 
-  const postText = postTextShow === true ? excerpt ? excerpt : htmltoText(post.post) : '';
+  const postText = postTextShow === true ? excerpt ? excerpt : postClamp : '';
 
-  const { text } = useReadingTime(postText);
   const [isHover, setIsHover] = useState(false);
 
   return (
@@ -75,7 +73,7 @@ const SubCard11: FC<Card11Props> = ({
               <>
               <span className="mx-2 font-semibold">·</span>
               <span className="text-neutral-700 dark:text-neutral-300">
-                {text}
+                {reading_time}
               </span>
               </>
             }

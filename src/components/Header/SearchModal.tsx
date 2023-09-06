@@ -118,6 +118,11 @@ const SearchModal: FC<Props> = ({ renderTrigger }) => {
         posts = await fetchPost(query);
       }
 
+      if(posts.length === 0 && categories.length === 0) {
+        setnoData(true);
+      }else {
+        setnoData(false);
+      }
       setfilteredCategories(categories);
       setfilteredPosts(posts);
     }

@@ -12,7 +12,6 @@ import PostTypeFeaturedIcon from "@/components/PostTypeFeaturedIcon/PostTypeFeat
 import Link from "next/link";
 import Image from "next/image";
 import PostCardMeta from "../PostCardMeta/PostCardMeta";
-import htmltoText from "@/utils/htmltoText";
 
 export interface Card2Props {
   className?: string;
@@ -25,10 +24,10 @@ const SubCard2: FC<Card2Props> = ({
   size = "normal",
   posts,
 }) => {
-  const { title, featured_imghd, href, created_at, category, post, authors, refauthors, excerpt } = posts;
+  const { title, featured_imghd, href, created_at, category, authors, refauthors, excerpt, postClamp } = posts;
   const [date, setDate] = useState(new Date(created_at).toLocaleString('en-us',{month:'short', day:'numeric', year:'numeric'}));
 
-  const postContent = excerpt ? excerpt : htmltoText(post);
+  const postContent = excerpt ? excerpt : postClamp;
 
   return (
     <div className={`nc-Card2 group relative flex flex-col  [ nc-box-has-hover ] [ nc-dark-box-bg-has-hover ] overflow-hidden ${className}`}

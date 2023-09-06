@@ -35,7 +35,7 @@ const fetchAuthor = async () => {
   var posts:any = await supabaseClient
   .from("posts")
   .select(
-    "*, authors!inner(*, custom_code!custom_code(*), users!users(*)), category!inner(*), refauthors!inner(*)",
+    "id, posttitle, title, featured_imghd, featured_imgsd, docsid, href, excerpt, metatitle, metadescription, created_at, postClamp, reading_time, authors!inner(*, custom_code!custom_code(*), users!users(*)), category!inner(*), refauthors!inner(*)",
   )
   .eq("authors.username", domain1)
   .eq("authors.cus_domain", domain2)

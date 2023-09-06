@@ -11,7 +11,6 @@ import PostCardLikeAndComment from "@/components/PostCardLikeAndComment/PostCard
 import CategoryBadgeList from "@/components/CategoryBadgeList/CategoryBadgeList";
 import PostTypeFeaturedIcon from "@/components/PostTypeFeaturedIcon/PostTypeFeaturedIcon";
 import Link from "next/link";
-import htmltoText from "@/utils/htmltoText";
 
 export interface Card3Props {
   className?: string;
@@ -24,10 +23,9 @@ const SubCard3: FC<Card3Props> = ({
     size="normal",
     posts,
  }) => {
-    const { title, featured_imghd, href, created_at, category, post, authors, refauthors } = posts;
+    const { title, featured_imghd, href, created_at, category, excerpt, postClamp } = posts;
     const [date, setDate] = useState(new Date(created_at).toLocaleString('en-us',{month:'short', day:'numeric', year:'numeric'}));
-    const postContent = htmltoText(post);
-
+    const postContent = excerpt ? excerpt : postClamp;
 
   return (
     <div

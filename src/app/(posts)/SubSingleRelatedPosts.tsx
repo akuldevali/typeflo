@@ -33,7 +33,9 @@ const SubSingleRelatedPosts:FC<SubSingleRelatedPostsProps> = ({ category, type, 
             var relposts:any = type === "authors" ? 
             await supabaseClient
             .from('posts')
-            .select('*, authors!inner(*), category!inner(*)')
+            .select(
+              "id, posttitle, title, featured_imghd, featured_imgsd, docsid, href, excerpt, metatitle, metadescription, created_at, postClamp, reading_time, authors!inner(*, custom_code!custom_code(*), users!users(*)), category!inner(*), refauthors!inner(*)",
+            )
             .eq('authors.username', domain1)
             .eq('authors.cus_domain', domain2)
             .eq('category.id', category)
@@ -41,7 +43,9 @@ const SubSingleRelatedPosts:FC<SubSingleRelatedPostsProps> = ({ category, type, 
             .range(0, 3) : 
             await supabaseClient
             .from('posts')
-            .select('*, authors!inner(*), category!inner(*), refauthors!inner(*)')
+            .select(
+              "id, posttitle, title, featured_imghd, featured_imgsd, docsid, href, excerpt, metatitle, metadescription, created_at, postClamp, reading_time, authors!inner(*, custom_code!custom_code(*), users!users(*)), category!inner(*), refauthors!inner(*)",
+            )
             .eq('refauthors.id', domain1)
             .eq('category.id', category)
             .neq('posttitle', postTitle)
@@ -50,7 +54,9 @@ const SubSingleRelatedPosts:FC<SubSingleRelatedPostsProps> = ({ category, type, 
             var autposts:any = type === "authors" ? 
             await supabaseClient
             .from('posts')
-            .select('*, authors!inner(*), category!inner(*)')
+            .select(
+              "id, posttitle, title, featured_imghd, featured_imgsd, docsid, href, excerpt, metatitle, metadescription, created_at, postClamp, reading_time, authors!inner(*, custom_code!custom_code(*), users!users(*)), category!inner(*), refauthors!inner(*)",
+            )
             .eq('authors.username', domain1)
             .eq('authors.cus_domain', domain2)
             .neq('posttitle', postTitle)
@@ -59,7 +65,9 @@ const SubSingleRelatedPosts:FC<SubSingleRelatedPostsProps> = ({ category, type, 
             :
             await supabaseClient
             .from('posts')
-            .select('*, authors!inner(*), category!inner(*), refauthors!inner(*)')
+            .select(
+              "id, posttitle, title, featured_imghd, featured_imgsd, docsid, href, excerpt, metatitle, metadescription, created_at, postClamp, reading_time, authors!inner(*, custom_code!custom_code(*), users!users(*)), category!inner(*), refauthors!inner(*)",
+            )
             .eq('refauthors.id', domain1)
             .neq('posttitle', postTitle)
             .neq('category.id', category)

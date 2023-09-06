@@ -1,7 +1,6 @@
 "use client"
 import React, { FC, useState } from "react";
 import Avatar from "@/components/Avatar/Avatar";
-import htmltoText from "@/utils/htmltoText";
 import { useReadingTime } from "react-hook-reading-time";
 import { DEMO_POSTS } from "@/data/posts";
 import Link from "next/link";
@@ -25,10 +24,8 @@ const SubPostMeta2: FC<PostMeta2Props> = ({
   size = "normal",
   avatarRounded,
 }) => {
-  const { created_at, authors, post, refauthors } = meta;
+  const { created_at, authors, post, refauthors, reading_time } = meta;
   const [date, setDate] = useState(new Date(created_at).toLocaleString('en-us',{month:'short', day:'numeric', year:'numeric'}));
-
-  const { text } = useReadingTime(htmltoText(post));
 
   return (
     <div
@@ -71,7 +68,7 @@ const SubPostMeta2: FC<PostMeta2Props> = ({
           <span className="text-neutral-700 dark:text-neutral-300">{date}</span>
           <span className="mx-2 font-semibold">·</span>
           <span className="text-neutral-700 dark:text-neutral-300">
-            {text}
+            {reading_time}
           </span>
         </div>
       </div>

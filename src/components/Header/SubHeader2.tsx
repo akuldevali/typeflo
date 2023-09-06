@@ -1,5 +1,3 @@
-"use client";
-
 import React, { FC, useRef, useState, useEffect } from "react";
 import SubMainNav1 from "./SubMainNav1";
 import { usePathname } from 'next/navigation'
