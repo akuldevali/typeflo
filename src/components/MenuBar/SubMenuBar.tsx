@@ -19,22 +19,23 @@ export interface MenuBarProps {
     buttons?: any,
     authors?: any,
 }
+
+export const renderMainItem = (item: any, index: any, className?: string) => {
+  return (
+    <li key={index} className={`text-neutral-900 dark:text-white ${className}`}>
+      <Link
+          target="_blank"
+          className={`flex w-full items-center py-2.5 px-2.5 rounded-xl font-light text-md hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg`}
+          href={item.link}
+      >
+          {item.name}
+      </Link>
+    </li>
+  )
+};
+
 const SubMenuBar: React.FC<MenuBarProps> = ({ navigations, socials, authors, buttons }) => {
   const darkmodeState = useThemeMode();
-
-  const renderMainItem = (item: any, index: any) => {
-    return (
-      <li key={index} className="text-neutral-900 dark:text-white">
-        <Link
-            target="_blank"
-            className={`flex w-full items-center py-2.5 font-light text-md hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg`}
-            href={item.link}
-        >
-            {item.name}
-        </Link>
-      </li>
-    )
-  };
 
   const renderContent = () => {
     return (

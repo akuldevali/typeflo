@@ -29,10 +29,10 @@ const SubCard11: FC<Card11Props> = ({
   postTextShow = true,
   onClick,
 }) => {
-  const { title, featured_imghd, href, created_at, category } = post;
+  const { title, featured_imghd, href, created_at, category, excerpt } = post;
   const [date, setDate] = useState(new Date(created_at).toLocaleString('en-us',{month:'short', day:'numeric', year:'numeric'}));
 
-  const postText = postTextShow === true ? htmltoText(post.post) : '';
+  const postText = postTextShow === true ? excerpt ? excerpt : htmltoText(post.post) : '';
 
   const { text } = useReadingTime(postText);
   const [isHover, setIsHover] = useState(false);

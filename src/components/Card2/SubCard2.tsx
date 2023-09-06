@@ -25,10 +25,10 @@ const SubCard2: FC<Card2Props> = ({
   size = "normal",
   posts,
 }) => {
-  const { title, featured_imghd, href, created_at, category, post, authors, refauthors } = posts;
+  const { title, featured_imghd, href, created_at, category, post, authors, refauthors, excerpt } = posts;
   const [date, setDate] = useState(new Date(created_at).toLocaleString('en-us',{month:'short', day:'numeric', year:'numeric'}));
 
-  const postContent = htmltoText(post);
+  const postContent = excerpt ? excerpt : htmltoText(post);
 
   return (
     <div className={`nc-Card2 group relative flex flex-col  [ nc-box-has-hover ] [ nc-dark-box-bg-has-hover ] overflow-hidden ${className}`}
