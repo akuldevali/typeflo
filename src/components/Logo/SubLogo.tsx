@@ -19,7 +19,7 @@ const SubLogo: React.FC<LogoProps> = ({
       {/* THIS USE FOR MY MULTI DEMO */}
       {/* IF YOU ARE MY CLIENT. PLESE DELETE THIS CODE AND YOU YOUR IMAGE PNG BY BELLOW CODE */}
       
-      <img className="mx-auto object-contain h-12 md:h-10 lg:h-10 text-neutral-400" alt={title} src={img} />
+      <img className="mx-auto object-contain h-12 md:h-10 lg:h-10 text-neutral-400" alt={title} src={`${img}`} />
     </Link>
   );
 };
