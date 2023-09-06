@@ -43,8 +43,8 @@ const nextConfig = {
     NEXT_SUPABASE_URL: 'https://auth.typeflo.io',
     NEXT_SUPABASE_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ewogICAgInJvbGUiOiAiYW5vbiIsCiAgICAiaXNzIjogInN1cGFiYXNlIiwKICAgICJpYXQiOiAxNjg5NzA1MDAwLAogICAgImV4cCI6IDE4NDc1NTc4MDAKfQ.MnniBE3xXQzPcOmT0QjU2HuIq6qQIanY_kV_T7UoW7E',
     NEXT_SITE: 'typeflo.io',
-    NEXT_SITE_NAME: 'typeflo',
-    NEXT_URL: 'typeflo',
+    NEXT_SITE_NAME: 'localhost:3001',
+    NEXT_URL: 'localhost:3001',
   },
 };
 
