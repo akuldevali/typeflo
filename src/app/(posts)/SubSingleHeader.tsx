@@ -22,7 +22,7 @@ const SubSingleHeader: FC<SingleHeaderProps> = ({
 }) => {
   console.log(postData);
 
-  const { title, category, created_at, authors, post, refauthors, href, excerpt } = postData[0];
+  const { title, category, created_at, authors, reading_time, refauthors, href, excerpt } = postData[0];
 
   return (
     <>
@@ -45,7 +45,7 @@ const SubSingleHeader: FC<SingleHeaderProps> = ({
               className="leading-none flex-shrink-0"
               hiddenCategories 
               type={refauthors.id === '153de11c-9ce8-4d79-9d19-c10da778e84c' ? 'authors': 'refauthors'}
-              meta={{ created_at, authors, post, refauthors }}
+              meta={{ created_at, authors, reading_time, refauthors }}
               avatarRounded="rounded-full shadow-inner"
             />
             <SubSingleMetaAction2 meta={{ title, href }} />

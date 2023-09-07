@@ -24,7 +24,7 @@ const SubPostMeta2: FC<PostMeta2Props> = ({
   size = "normal",
   avatarRounded,
 }) => {
-  const { created_at, authors, post, refauthors, reading_time } = meta;
+  const { created_at, authors, reading_time, refauthors } = meta;
   const [date, setDate] = useState(new Date(created_at).toLocaleString('en-us',{month:'short', day:'numeric', year:'numeric'}));
 
   return (
