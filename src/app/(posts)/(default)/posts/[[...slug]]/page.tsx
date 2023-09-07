@@ -22,7 +22,7 @@ const fetchPost = async (postslug: string, domain1: string, domain2: string) => 
 
   const { data, error } = await supabaseClient
     .from('posts')
-    .select(`id, posttitle, title, featured_imghd, featured_imgsd, docsid, href, excerpt, metatitle, metadescription, created_at, postClamp, reading_time, authors!inner(metatitle, users!users(*)), category!inner(*), refauthors!inner(*)`)
+    .select(`*, authors!inner(metatitle, users!users(*)), category!inner(*), refauthors!inner(*)`)
     .eq('posttitle', postslug)
     .eq('authors.username', domain1)
     .eq('authors.cus_domain', domain2)
