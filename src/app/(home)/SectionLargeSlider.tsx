@@ -20,25 +20,6 @@ const SectionLargeSlider: FC<SectionLargeSliderProps> = ({
   type = "default",
   className = "",
 }) => {
-  const [indexActive, setIndexActive] = useState(0);
-
-  const handleClickNext = () => {
-    setIndexActive((state) => {
-      if (state >= posts.length - 1) {
-        return 0;
-      }
-      return state + 1;
-    });
-  };
-
-  const handleClickPrev = () => {
-    setIndexActive((state) => {
-      if (state === 0) {
-        return posts.length - 1;
-      }
-      return state - 1;
-    });
-  };
 
   const authorPosts:any = posts;
 

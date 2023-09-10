@@ -14,12 +14,15 @@ import dynamic from 'next/dynamic';
 var inPage:any = 0, fnPage:any = 10, postsLoc:any = [], icPage:any = 0, fcPage:any = 0, catVal: any = "-1", maxPost: any = 10, hostname:any;
 
 const SectionArticles = dynamic(() => import('@/app/(home)/SectionsArticles'), {
-  ssr: false,
+  ssr: false, 
+  loading: () => <p>Loading...</p>,
 })
 
 const PageHome = (props: any) => {
 
   const { post, author, domain1, domain2 } = useGlobalContext();
+
+  const { newslettermode } = author[0];
 
   const [btnLoading, setbtnLoading] = useState<any>(false);
   const [loading, setLoading] = useState<any>(false);
@@ -251,10 +254,12 @@ const PageHome = (props: any) => {
           setPosts={() => setPosts(categoryList)}
         />}
 
-        <div className="relative">
-          <BackgroundSection />
-          <SectionSubscribe3 className="pt-16 pb-10 lg:pt-28" />
-        </div>
+        {
+          newslettermode && <div className="relative">
+            <BackgroundSection />
+            <SectionSubscribe3 className="pt-16 pb-10 lg:pt-28" />
+          </div>
+        }
 
         <Snackbar
           open={snackStatus}

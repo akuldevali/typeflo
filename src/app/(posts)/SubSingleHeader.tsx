@@ -1,5 +1,3 @@
-"use client";
-
 import React, { FC } from "react";
 import SubCategoryBadgeList from "@/components/CategoryBadgeList/SubCategoryBadgeList";
 import SingleTitle from "./SingleTitle";
