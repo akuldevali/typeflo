@@ -69,7 +69,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const PageSingle = async ({ params }: { params: { slug: string } }) => {
-  console.log(params.slug)
+  //console.log(params.slug)
   const { domain1, domain2 } = getAuthorSlugv2();
   
   const postData = await fetchPost(params.slug[0], domain1, domain2);

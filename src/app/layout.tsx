@@ -56,7 +56,7 @@ const fetchAuthor = async () => {
     if (authors.error) {
       return returnFun("Please check your internet connection & refresh the page", null, [], null, null, domain1, domain2);
     }
-    console.log(authors)
+    //console.log(authors)
     return returnFun(null, null, authors.data, nav.data, null, domain1, domain2);
 
   } else {
@@ -141,8 +141,8 @@ function injectScriptsFromHTML(html:any, strategy:any) {
   });
   const regex = /<script(?:\s+[^>]+)?>([\s\S]*?)<\/script>/gi;
   const scriptTags = extractedTags.match(regex);
-  console.log("ext" + extractedTags);
-  console.log(scriptTags)
+  //console.log("ext" + extractedTags);
+  //console.log(scriptTags)
 
   if (!scriptTags) {
     return <></>;
@@ -185,7 +185,7 @@ export default async function RootLayout({
 
   const headerScripts = injectScriptsFromHTML(headerHTML, "afterInteractive");
   const footerScripts = injectScriptsFromHTML(footerHTML, "lazyOnload");
-  console.log(headerScripts)
+  //console.log(headerScripts)
 
   const themeColour = author[0].theme_colour;
 
