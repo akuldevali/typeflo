@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC, useState } from "react";
+import React, { FC, useState, useEffect } from "react";
 import PostCardSaveAction from "@/components/PostCardSaveAction/PostCardSaveAction";
 import SubCategoryBadgeList from "@/components/CategoryBadgeList/SubCategoryBadgeList";
 import PostCardLikeAndComment from "@/components/PostCardLikeAndComment/PostCardLikeAndComment";
@@ -29,7 +29,12 @@ const SubCard11: FC<Card11Props> = ({
   onClick,
 }) => {
   const { title, featured_imghd, href, created_at, category, excerpt, postClamp, reading_time } = post;
-  const [date, setDate] = useState(new Date(created_at).toLocaleString('en-us',{month:'short', day:'numeric', year:'numeric'}));
+  const [date, setDate] = useState<any>(null);
+
+  useEffect(() => {
+    const postDate = new Date(created_at).toLocaleString('en-us',{month:'short', day:'numeric', year:'numeric'});
+    setDate(postDate)
+  }, [created_at]);
 
   const postText = postTextShow === true ? excerpt ? excerpt : postClamp : '';
 

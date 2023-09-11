@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC, useState } from "react";
+import React, { FC, useState, useEffect } from "react";
 import NcImage from "@/components/NcImage/NcImage";
 import PostCardMeta from "@/components/PostCardMeta/PostCardMeta";
 import PostCardSaveAction from "@/components/PostCardSaveAction/PostCardSaveAction";
@@ -24,7 +24,13 @@ const SubCard3: FC<Card3Props> = ({
     posts,
  }) => {
     const { title, featured_imghd, href, created_at, category, excerpt, postClamp } = posts;
-    const [date, setDate] = useState(new Date(created_at).toLocaleString('en-us',{month:'short', day:'numeric', year:'numeric'}));
+    const [date, setDate] = useState<any>(null);
+  
+    useEffect(() => {
+      const postDate = new Date(created_at).toLocaleString('en-us',{month:'short', day:'numeric', year:'numeric'});
+      setDate(postDate)
+    }, [created_at]);
+
     const postContent = excerpt ? excerpt : postClamp;
 
   return (

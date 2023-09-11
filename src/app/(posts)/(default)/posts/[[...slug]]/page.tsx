@@ -14,6 +14,9 @@ type Props = {
   params: { slug: string };
 };
 
+export const revalidate = 0;
+export const dynamic = 'force-dynamic';
+
 const returnFun = (error: any, posts: any) => { 
   return { errors: error, post: posts };
 }

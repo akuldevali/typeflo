@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PostCardSaveAction from "@/components/PostCardSaveAction/PostCardSaveAction";
 import NcImage from "@/components/NcImage/NcImage";
 import NextPrev from "@/components/NextPrev/NextPrev";
@@ -26,7 +26,13 @@ const SubCardLarge1: FC<CardLarge1Props> = ({
   onClickPrev = () => {},
 }) => {
   const { title, featured_imghd, href, created_at, category, post, authors, refauthors } = posts;
-  const [date, setDate] = useState(new Date(created_at).toLocaleString('en-us',{month:'short', day:'numeric', year:'numeric'}));
+ 
+  const [date, setDate] = useState<any>(null);
+
+  useEffect(() => {
+    const postDate = new Date(created_at).toLocaleString('en-us',{month:'short', day:'numeric', year:'numeric'});
+    setDate(postDate)
+  }, [created_at]);
 
   return (
     <div
