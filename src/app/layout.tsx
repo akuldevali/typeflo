@@ -18,6 +18,8 @@ const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+export const revalidate = 0;
+export const dynamic = 'force-dynamic';
 
 const supabaseFetchMultipleEq = async (table: string, query: string, type: string, authorSlug: string, type2: string, authorSlug2: string) => {
   const { data, error } = await supabaseClient.from(table).select(query).eq(type, authorSlug).eq(type2, authorSlug2);
@@ -73,8 +75,6 @@ const fetchMeta = async () => {
     }
     return { error: false, data: authors.data };
 }
-
-export const revalidate = 0;
 
 export async function generateMetadata(): Promise<Metadata> {
 
