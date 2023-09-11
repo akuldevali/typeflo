@@ -14,6 +14,7 @@ import dynamic from 'next/dynamic';
 var inPage:any = 0, fnPage:any = 10, postsLoc:any = [], icPage:any = 0, fcPage:any = 0, catVal: any = "-1", maxPost: any = 10, hostname:any;
 
 const SectionArticles = dynamic(() => import('@/app/(home)/SectionsArticles'), {
+  ssr: false,
 })
 
 const PageHome = (props: any) => {
