@@ -42,7 +42,7 @@ const fetchAuthor = async () => {
   .range(0, 10)
   .order("created_at", { ascending: false });
 
-  var nav:any =  []; //await supabaseFetchMultipleEq("navigationv2", "*, authors!inner(*, custom_code!custom_code(*), users!users(*))", "authors.username", domain1, 'authors.cus_domain', domain2);
+  var nav:any = await supabaseFetchMultipleEq("navigationv2", "*, authors!inner(*, custom_code!custom_code(*), users!users(*))", "authors.username", domain1, 'authors.cus_domain', domain2);
 
   if (posts.error || nav.error) {
 
