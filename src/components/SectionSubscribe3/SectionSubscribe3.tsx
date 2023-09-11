@@ -1,3 +1,5 @@
+"use client"
+
 import React, { FC, useRef, useState } from "react";
 import ButtonPrimary from "@/components/Button/ButtonPrimary";
 import Input from "@/components/Input/Input";

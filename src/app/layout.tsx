@@ -180,8 +180,8 @@ export default async function RootLayout({
 
   const { errors, author, nav } = userData;
   
-  var headerHTML = author[0].custom_code ? "<head>" + author[0].custom_code.header_code + "</head>" : "<></>";
-  var footerHTML = author[0].custom_code ? "<footer>" + author[0].custom_code.footer_code + "</footer>" : "<></>";
+  var headerHTML = author.length > 0 && author[0].custom_code ? "<head>" + author[0].custom_code.header_code + "</head>" : "<></>";
+  var footerHTML = author.length > 0 && author[0].custom_code ? "<footer>" + author[0].custom_code.footer_code + "</footer>" : "<></>";
 
   const headerScripts = injectScriptsFromHTML(headerHTML, "afterInteractive");
   const footerScripts = injectScriptsFromHTML(footerHTML, "lazyOnload");
@@ -191,9 +191,6 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className={poppins.className}>
-      <head>
-        {headerScripts}
-      </head>
       <body suppressHydrationWarning={true} className={`${themeColour} bg-[#f8f8f8] text-base dark:bg-neutral-900/95 text-neutral-900 dark:text-neutral-200`}>
         <GlobalContextProvider data={userData}>
           <SiteHeader />
@@ -206,7 +203,6 @@ export default async function RootLayout({
             darkmode: author[0].darkmode,
           }]} menus={nav} />
         </GlobalContextProvider>
-        {footerScripts}
       </body>
     </html>
   );
