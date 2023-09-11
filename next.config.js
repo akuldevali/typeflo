@@ -3,7 +3,7 @@ const nextConfig = {
   experimental: {
     appDir: true,
     typedRoutes: true,
-    swcMinify: false,
+    swcMinify: true,
   },
   images: {
     remotePatterns: [
