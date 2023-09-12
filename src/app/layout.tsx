@@ -2,14 +2,13 @@ import "./globals.css";
 import "@/styles/index.scss";
 import "@/fonts/line-awesome-1.3.0/css/line-awesome.css";
 import { Poppins } from "next/font/google";
-import MusicPlayer from "@/components/MusicPlayer/MusicPlayer";
 import SubFooter from "@/components/Footer/SubFooter";
 import SiteHeader from "./SiteHeader";
 import supabaseClient from "@/utils/supabaseClient";
 import getAuthorSlugv2 from "@/utils/getAuthorSlugv2";
 import GlobalContextProvider from "@/context/GlobalContextProvider";
 import { Metadata } from 'next';
-import sanitizeHtml from 'sanitize-html';
+//import sanitizeHtml from 'sanitize-html';
 import Script from "next/script";
 
 const poppins = Poppins({
@@ -183,8 +182,8 @@ export default async function RootLayout({
   var headerHTML = author.length > 0 && author[0].custom_code ? "<head>" + author[0].custom_code.header_code + "</head>" : "<></>";
   var footerHTML = author.length > 0 && author[0].custom_code ? "<footer>" + author[0].custom_code.footer_code + "</footer>" : "<></>";
 
-  const headerScripts = injectScriptsFromHTML(headerHTML, "afterInteractive");
-  const footerScripts = injectScriptsFromHTML(footerHTML, "lazyOnload");
+  //const headerScripts = injectScriptsFromHTML(headerHTML, "afterInteractive");
+  //const footerScripts = injectScriptsFromHTML(footerHTML, "lazyOnload");
   //console.log(headerScripts)
 
   const themeColour = author[0].theme_colour;
@@ -194,11 +193,10 @@ export default async function RootLayout({
       {/* <head>
         {headerScripts}
       </head> */}
-      <body suppressHydrationWarning={true} className={`${themeColour} bg-[#f8f8f8] text-base dark:bg-neutral-900/95 text-neutral-900 dark:text-neutral-200`}>
+      <body className={`${themeColour} bg-[#f8f8f8] text-base dark:bg-neutral-900/95 text-neutral-900 dark:text-neutral-200`}>
         <GlobalContextProvider data={userData}>
           <SiteHeader />
           {children}
-          <MusicPlayer />
           <SubFooter authors={[{
             logoimg: author[0].logoimg,
             metatitle: author[0].metatitle,
