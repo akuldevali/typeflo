@@ -13,7 +13,6 @@ type Props = {
 };
 
 export const revalidate = 0;
-export const runtime = 'edge';
 
 const SectionCategoryPosts = dynamic(() => import('@/app/(category)/SectionCategoryPosts'), {
   ssr: false,
