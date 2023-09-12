@@ -7,7 +7,6 @@ import { renderLogo } from "@/components/Header/SubMainNav1";
 import { useThemeMode } from "@/hooks/useThemeMode";
 import Link from "next/link";
 import SubNavigation from "@/components/Navigation/SubNavigation";
-import { renderMainItem } from "@/components/MenuBar/SubMenuBar";
 
 export interface WidgetFooterMenu {
   id: string;
