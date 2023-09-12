@@ -19,6 +19,7 @@ const poppins = Poppins({
 
 export const revalidate = 0;
 export const dynamic = 'force-dynamic';
+export const runtime = 'edge';
 
 const supabaseFetchMultipleEq = async (table: string, query: string, type: string, authorSlug: string, type2: string, authorSlug2: string) => {
   const { data, error } = await supabaseClient.from(table).select(query).eq(type, authorSlug).eq(type2, authorSlug2);
