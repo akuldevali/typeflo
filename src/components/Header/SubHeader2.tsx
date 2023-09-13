@@ -1,13 +1,20 @@
+"use client"
+
 import React, { FC, useRef, useState, useEffect } from "react";
 import SubMainNav1 from "./SubMainNav1";
 import { usePathname } from 'next/navigation'
 
-export interface HeaderProps {}
+export interface HeaderProps {
+  domain1: string;
+  domain2: string;
+  author: any;
+  nav: any;
+}
 
 let MAIN_MENU_HEIGHT = 0;
 let WIN_PREV_POSITION:any = typeof window !== "undefined" && window?.pageYOffset;
 
-const Header: FC<HeaderProps> = () => {
+const Header: FC<HeaderProps> = ({ domain1, domain2, author, nav }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const mainMenuRef = useRef<HTMLDivElement>(null);
   const progressBarRef = useRef<HTMLDivElement>(null);
@@ -120,7 +127,7 @@ const Header: FC<HeaderProps> = () => {
 
   return (
     <div className="nc-Header sticky top-0 w-full z-40">
-      <SubMainNav1 />
+      <SubMainNav1 domain1={domain1} domain2={domain2} author={author} nav={nav} />
       {showSingleMenu && renderSingleHeader()}
     </div>
   );

@@ -5,6 +5,7 @@ const nextConfig = {
     typedRoutes: true,
     swcMinify: false,
   },
+  reactStrictMode: false,
   images: {
     remotePatterns: [
       {

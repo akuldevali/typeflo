@@ -4,19 +4,30 @@ import React, { FC } from "react";
 import SubLogo from "@/components/Logo/SubLogo";
 import SubNavigation from "@/components/Navigation/SubNavigation";
 import ButtonPrimary from "@/components/Button/ButtonPrimary";
-import SwitchDarkMode from "@/components/SwitchDarkMode/SwitchDarkMode";
-import SearchModal from "./SearchModal";
 import Button from "../Button/Button";
 import Link from "next/link";
 import { useGlobalContext } from '@/context/GlobalContextProvider';
 import { useThemeMode } from "@/hooks/useThemeMode";
 import dynamic from "next/dynamic";
 
-export interface MainNav1Props {}
+export interface MainNav1Props {
+  domain1: string;
+  domain2: string;
+  author: any;
+  nav: any;
+}
 
 const SubMenuBar = dynamic(() => import('@/components/MenuBar/SubMenuBar'), {
   ssr: false,
-})
+});
+
+const SearchModal = dynamic(() => import('@/components/Header/SearchModal'), {
+  ssr: false,
+});
+
+const SwitchDarkMode = dynamic(() => import('@/components/SwitchDarkMode/SwitchDarkMode'), {
+  ssr: false,
+});
 
 export const renderDarkMode = (darkmode: any, darkmodeState: any) => {
 
@@ -48,11 +59,8 @@ export const renderLogo = (author: any, darkmodeState: boolean) => {
     }
 }
 
-const SubMainNav1: FC<MainNav1Props> = ({}) => {
-  const { author, nav } = useGlobalContext();  
+const SubMainNav1: FC<MainNav1Props> = ({ domain1, domain2, author, nav }) => {
 
-  console.log(author);
-  console.log(nav);
   const darkmodeState = useThemeMode();
   
   var actualmenu = [], menuE = [], navmenus = [], socials = [], buttons:any = [];
@@ -85,7 +93,7 @@ const SubMainNav1: FC<MainNav1Props> = ({}) => {
           <div className="flex-1 flex items-center justify-end text-neutral-700 dark:text-neutral-100 space-x-1">
             <div className="hidden items-center lg:flex">
               {renderDarkMode(author[0].darkmode, darkmodeState)}
-              <SearchModal />
+              <SearchModal domain1={domain1} domain2={domain2} />
               <div className="px-1"></div>
               {
                 buttons.length != 0 && (
@@ -100,7 +108,7 @@ const SubMainNav1: FC<MainNav1Props> = ({}) => {
               }
             </div>
             <div className="flex items-center lg:hidden">
-              <SearchModal />
+              <SearchModal domain1={domain1} domain2={domain2} />
               {
                 navmenus.length > 0 ? 
                 <div className="items-center md:hidden">

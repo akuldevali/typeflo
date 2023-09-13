@@ -15,8 +15,12 @@ const SubLogo: React.FC<LogoProps> = ({
   title,
 }) => {
   return (
+    <Link href="/" className="ttnc-logo inline-block text-primary-6000">
+      {/* THIS USE FOR MY MULTI DEMO */}
+      {/* IF YOU ARE MY CLIENT. PLESE DELETE THIS CODE AND YOU YOUR IMAGE PNG BY BELLOW CODE */}
       
-      <Image width={0} height={12} className="mx-auto object-contain h-12 md:h-10 lg:h-10 text-neutral-400" alt={title} src={`${img}`} />
+      <img className="mx-auto object-contain h-12 md:h-10 lg:h-10 text-neutral-400" alt={title} src={`${img}`} />
+    </Link>
   );
 };
 

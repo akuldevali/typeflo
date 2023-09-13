@@ -24,6 +24,8 @@ function classNames(...classes: any) {
 
 interface Props {
   renderTrigger?: () => ReactNode;
+  domain1: string;
+  domain2: string;
 }
 
 const supabaseSearch = async (table: any, content: any, column: any, domain1: string, domain2: string, search: string) => {
@@ -37,15 +39,13 @@ const supabaseSearch = async (table: any, content: any, column: any, domain1: st
     return { data, error }
 } 
 
-const SearchModal: FC<Props> = ({ renderTrigger }) => {
+const SearchModal: FC<Props> = ({ renderTrigger, domain1, domain2 }) => {
   const [open, setOpen] = useState(false);
   const [rawQuery, setRawQuery] = useState("a");
 
-  const { post, domain1, domain2 } = useGlobalContext();
+  const initPost:any = [];
 
-  const initPost = post ? post.slice(0, 2) : [];
-
-  const categoryFilter = post ? initPost.map((item: any) => { return item.category }).filter((v: any, i: any, a: any) => a.findIndex((t: any) => (t.id === v.id)) === i).filter((item: any) => { return item.name !== "News" }) : [];
+  const categoryFilter:any = [];
 
   const [filteredPosts, setfilteredPosts] = useState<any>([]);
   const [filteredCategories, setfilteredCategories] = useState<any>([]);

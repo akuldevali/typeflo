@@ -15,8 +15,6 @@ type Props = {
 };
 
 export const revalidate = 0;
-export const dynamic = 'force-dynamic';
-
 
 const returnFun = (error: any, posts: any) => { 
   return { errors: error, post: posts };
@@ -26,7 +24,7 @@ const fetchPost = async (postslug: string, domain1: string, domain2: string) => 
 
   const { data, error } = await supabaseClient
     .from('posts')
-    .select(`*, authors!inner(metatitle, users!users(*)), category!inner(*), refauthors!inner(*)`)
+    .select(`*, authors!inner(metatitle, newsletterC, users!users(*)), category!inner(*), refauthors!inner(*)`)
     .eq('posttitle', postslug)
     .eq('authors.username', domain1)
     .eq('authors.cus_domain', domain2)
@@ -103,7 +101,7 @@ const PageSingle = async ({ params }: { params: { slug: string } }) => {
 
         {/* SINGLE MAIN CONTENT */}
         <div className="container mt-10">
-          <SubSingleContent data={postData.post[0].post} />
+          <SubSingleContent data={postData.post[0].post} author={postData.post[0].authors} />
         </div>
   
         {/* RELATED POSTS */}

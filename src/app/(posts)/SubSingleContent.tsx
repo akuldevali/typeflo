@@ -6,9 +6,10 @@ import SectionSubscribe3 from "@/components/SectionSubscribe3/SectionSubscribe3"
 
 export interface SingleContentProps {
     data: any;
+    author: any;
 }
 
-const SubSingleContent: FC<SingleContentProps> = ({ data }) => {
+const SubSingleContent: FC<SingleContentProps> = ({ data, author }) => {
   const contentRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -25,7 +26,7 @@ const SubSingleContent: FC<SingleContentProps> = ({ data }) => {
 
       </div>
       <div className="container">
-        <SectionSubscribe3 className="pt-16 pb-2 lg:pt-28" />
+        <SectionSubscribe3 author={[author]} className="pt-16 pb-2 lg:pt-28" />
       </div>
     </div>
   );

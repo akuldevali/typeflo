@@ -9,10 +9,10 @@ import { useGlobalContext } from "@/context/GlobalContextProvider";
 
 export interface SectionSubscribe3Props {
   className?: string;
+  author: any;
 }
 
-const SectionSubscribe3: FC<SectionSubscribe3Props> = ({ className = "" }) => {
-  const { author } = useGlobalContext();
+const SectionSubscribe3: FC<SectionSubscribe3Props> = ({ className = "", author }) => {
 
   const subEmail = useRef<any>(null);
 
