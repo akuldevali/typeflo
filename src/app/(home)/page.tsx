@@ -130,7 +130,7 @@ const PageHome = async (props: any) => {
           posts={postsFiltered}
         />
 
-        {posts != null && <SectionArticles
+        {posts.length > 0 && <SectionArticles
             post={posts}
             cat={categoryData}
             domain1={domain1}
