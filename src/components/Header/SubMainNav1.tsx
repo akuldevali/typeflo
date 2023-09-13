@@ -50,6 +50,9 @@ export const renderLogo = (author: any, darkmodeState: boolean) => {
 
 const SubMainNav1: FC<MainNav1Props> = ({}) => {
   const { author, nav } = useGlobalContext();  
+
+  console.log(author);
+  console.log(nav);
   const darkmodeState = useThemeMode();
   
   var actualmenu = [], menuE = [], navmenus = [], socials = [], buttons:any = [];
