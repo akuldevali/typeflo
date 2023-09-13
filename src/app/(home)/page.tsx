@@ -15,8 +15,17 @@ const SectionArticles = dynamic(() => import('@/app/(home)/SectionsArticles'), {
 export const revalidate = 0;
 
 const fetchPosts = async (domain1: string, domain2: string) => { 
+  const returnCon:{
+    error: String;
+    posts: any[];
+    author: any[];
+  } = {
+    error: "",
+    posts: [],
+    author: [],
+  }
 
-  var posts = await supabaseClient
+  var posts:any = await supabaseClient
   .from("posts")
   .select(
     "id, posttitle, title, featured_imghd, featured_imgsd, docsid, href, excerpt, metatitle, metadescription, created_at, postClamp, reading_time, authors!inner(id, title, description, newslettermode, newsletterC, posts, users!users(*)), category!inner(*), refauthors!inner(id, name, avatar)",
@@ -27,29 +36,22 @@ const fetchPosts = async (domain1: string, domain2: string) => {
   .order("created_at", { ascending: false });
 
   if (posts.error) {
+    returnCon["error"] = posts.error.message;
 
-    throw posts.error.message;
-
-  }
-  if (posts.data.length == 0) {
-    var authors = await supabaseFetchMultipleEq("authors", "*, custom_code!custom_code(*), users!users(*)", "username", domain1, 'cus_domain', domain2);
+  }else if (posts.data.length == 0) {
+    var authors:any = await supabaseFetchMultipleEq("authors", "*, custom_code!custom_code(*), users!users(*)", "username", domain1, 'cus_domain', domain2);
 
     if (authors.error) {
-      throw authors.error.message;
+      returnCon["error"] = posts.error.message;
     }
 
-    return {
-      posts: [],
-      author: authors.data,
-    }
+    returnCon["author"] = authors.data;
 
   } else {
-
-    return {
-      posts: posts.data,
-      author: [posts.data[0].authors],
-    }
+    returnCon["posts"] = [...posts.data];
+    returnCon["author"] = [posts.data[0].authors];
   }
+  return returnCon;
 }
 
 const fetchCat = async (domain1: string, domain2: string) => { 
@@ -113,8 +115,6 @@ const PageHome = async (props: any) => {
 
   console.log(author)
 
-  const { newslettermode } = author[0];
-
   const postsFiltered = posts?.sort((a:any, b:any) => {
     return b.created_at - a.created_at;
   }).slice(0, 3);
@@ -139,7 +139,7 @@ const PageHome = async (props: any) => {
         />}
 
         {
-          newslettermode && <div className="relative">
+          author[0].newslettermode && <div className="relative">
             <BackgroundSection />
             <SectionSubscribe3 author={author} className="pt-16 pb-10 lg:pt-28" />
           </div>
