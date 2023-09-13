@@ -5,14 +5,16 @@ import SubSingleHeader from "@/app/(posts)/SubSingleHeader";
 import supabaseClient from "@/utils/supabaseClient";
 import getAuthorSlugv2 from "@/utils/getAuthorSlugv2";
 import SubSingleContent from "@/app/(posts)/SubSingleContent";
-import SubSingleRelatedPosts from "@/app/(posts)/SubSingleRelatedPosts";
-import Error from "@/components/Error/Error";
-import NotFound from "@/components/NotFound/NotFound";
+import dynamic from 'next/dynamic';
 import { Metadata } from 'next';
 
 type Props = {
   params: { slug: string };
 };
+
+const SubSingleRelatedPosts = dynamic(() => import("@/app/(posts)/SubSingleRelatedPosts"), {
+  ssr: false,
+})
 
 export const revalidate = 0;
 

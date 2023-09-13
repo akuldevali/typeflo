@@ -1,6 +1,4 @@
-"use client";
-
-import React, { FC, useRef } from "react";
+import React, { FC } from "react";
 import SubSingleContentDemo from "./SubSingleContentDemo";
 import SectionSubscribe3 from "@/components/SectionSubscribe3/SectionSubscribe3";
 
@@ -10,7 +8,6 @@ export interface SingleContentProps {
 }
 
 const SubSingleContent: FC<SingleContentProps> = ({ data, author }) => {
-  const contentRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className="relative">
@@ -19,7 +16,6 @@ const SubSingleContent: FC<SingleContentProps> = ({ data, author }) => {
         <div
           id="single-entry-content"
           className="prose lg:prose-lg !max-w-screen-md mx-auto dark:prose-invert"
-          ref={contentRef}
         >
           <SubSingleContentDemo data={data} />
         </div>

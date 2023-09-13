@@ -2,15 +2,17 @@ import React, { FC } from "react";
 import SubCategoryBadgeList from "@/components/CategoryBadgeList/SubCategoryBadgeList";
 import SingleTitle from "./SingleTitle";
 import SubPostMeta2 from "@/components/PostMeta2/SubPostMeta2";
-import SubSingleMetaAction2 from "./SubSingleMetaAction2";
-import { DEMO_CATEGORIES } from "@/data/taxonomies";
-
 export interface SingleHeaderProps {
   hiddenDesc?: boolean;
   titleMainClass?: string;
   postData: any;
   className?: string;
 }
+import dynamic from 'next/dynamic';
+
+const SubSingleMetaAction2 = dynamic(() => import('@/app/(posts)/SubSingleMetaAction2'), {
+  ssr: false,
+})
 
 const SubSingleHeader: FC<SingleHeaderProps> = ({
   titleMainClass,
