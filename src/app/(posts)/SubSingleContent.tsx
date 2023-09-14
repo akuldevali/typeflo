@@ -1,3 +1,5 @@
+"use client"
+
 import React, { FC } from "react";
 import SubSingleContentDemo from "./SubSingleContentDemo";
 import SectionSubscribe3 from "@/components/SectionSubscribe3/SectionSubscribe3";
