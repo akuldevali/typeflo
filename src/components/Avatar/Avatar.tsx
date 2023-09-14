@@ -29,14 +29,6 @@ const Avatar: FC<AvatarProps> = ({
 
   const [url, setUrl] = useState(imgUrl);
 
-  useEffect(() => {
-    // FOR DEMO
-    if (!url) {
-      setUrl(_getAvatarRd());
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   return (
     <div
       className={`wil-avatar relative flex-shrink-0 inline-flex items-center justify-center overflow-hidden text-neutral-100 uppercase font-semibold shadow-inner ${radius} ${sizeClass} ${containerClassName}`}
