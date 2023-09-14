@@ -13,12 +13,13 @@ const SubSingleContent: FC<SingleContentProps> = ({ data, author }) => {
     <div className="relative">
       <div className="nc-SingleContent space-y-5">
         {/* ENTRY CONTENT */}
-        {/* <div
+        <div
           id="single-entry-content"
           className="prose lg:prose-lg !max-w-screen-md mx-auto dark:prose-invert"
         >
-          <SubSingleContentDemo data={data} />
-        </div> */}
+          {data}
+          {/* <SubSingleContentDemo data={data} /> */}
+        </div>
 
       </div>
       <div className="container">
