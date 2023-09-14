@@ -120,7 +120,6 @@ const PageHome = async (props: any) => {
   }).slice(0, 3);
 
   return (
-    <>
     <div className="nc-PageHome relative overflow-x-hidden bg-white dark:bg-slate-800">
       <div className="container relative">
         <SectionLargeSlider
@@ -146,7 +145,6 @@ const PageHome = async (props: any) => {
         }
       </div>
     </div>
-    </>
   );
 };
 
