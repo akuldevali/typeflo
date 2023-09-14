@@ -90,7 +90,7 @@ const PageSingle = async ({ params }: { params: { slug: string } }) => {
         </div>
 
         {/* FEATURED IMAGE */}
-        {/* <NcImage
+        <NcImage
           alt="single"
           containerClassName="container my-10 sm:my-12"
           className="w-full rounded-xl"
@@ -98,7 +98,7 @@ const PageSingle = async ({ params }: { params: { slug: string } }) => {
           width={1260}
           height={750}
           sizes="(max-width: 1024px) 100vw, 1280px"
-        /> */}
+        />
 
         {/* SINGLE MAIN CONTENT */}
         {/* <div className="container mt-10">
