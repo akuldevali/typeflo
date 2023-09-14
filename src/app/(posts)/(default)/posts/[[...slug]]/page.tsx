@@ -7,6 +7,7 @@ import getAuthorSlugv2 from "@/utils/getAuthorSlugv2";
 import SubSingleContent from "@/app/(posts)/SubSingleContent";
 import dynamic from 'next/dynamic';
 import { Metadata } from 'next';
+import parse from 'html-react-parser';
 
 type Props = {
   params: { slug: string };
@@ -36,7 +37,14 @@ const fetchPost = async (postslug: string, domain1: string, domain2: string) => 
     }
 
     if(data) {
-      return returnFun(null, data);
+      const htmlContent = parse(data[0].post);
+      const postData = [
+        ...data,
+        {
+          postContent: htmlContent,
+        }
+      ];
+      return returnFun(null, postData);
     } else {
       return returnFun("Please check your internet connection & refresh the page", null);
     }
@@ -102,7 +110,7 @@ const PageSingle = async ({ params }: { params: { slug: string } }) => {
 
         {/* SINGLE MAIN CONTENT */}
         <div className="container mt-10">
-          <SubSingleContent data={postData.post[0].post} author={postData.post[0].authors} />
+          <SubSingleContent data={postData.post[1].postContent} author={postData.post[0].authors} />
         </div>
   
         {/* RELATED POSTS */}
