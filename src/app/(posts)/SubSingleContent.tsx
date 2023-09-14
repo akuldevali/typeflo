@@ -12,7 +12,7 @@ export interface SingleContentProps {
 const SubSingleContent: FC<SingleContentProps> = ({ data, author }) => {
 
   return (
-    <div className="relative">
+    <div className="relative" suppressHydrationWarning={true}>
       <div className="nc-SingleContent space-y-5">
         {/* ENTRY CONTENT */}
         <div
