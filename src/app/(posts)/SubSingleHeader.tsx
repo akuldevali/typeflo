@@ -1,14 +1,18 @@
 import React, { FC } from "react";
 import SubCategoryBadgeList from "@/components/CategoryBadgeList/SubCategoryBadgeList";
 import SingleTitle from "./SingleTitle";
-import SubPostMeta2 from "@/components/PostMeta2/SubPostMeta2";
+import dynamic from 'next/dynamic';
+
 export interface SingleHeaderProps {
   hiddenDesc?: boolean;
   titleMainClass?: string;
   postData: any;
   className?: string;
 }
-import dynamic from 'next/dynamic';
+
+const SubPostMeta2 = dynamic(() => import('@/components/PostMeta2/SubPostMeta2'), {
+  ssr: false,
+})
 
 const SubSingleMetaAction2 = dynamic(() => import('@/app/(posts)/SubSingleMetaAction2'), {
   ssr: false,
