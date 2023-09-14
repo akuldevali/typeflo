@@ -101,12 +101,12 @@ const PageSingle = async ({ params }: { params: { slug: string } }) => {
         />
 
         {/* SINGLE MAIN CONTENT */}
-        <div className="container mt-10">
+        {/* <div className="container mt-10">
           <SubSingleContent data={postData.post[0].post} author={postData.post[0].authors} />
-        </div>
+        </div> */}
   
         {/* RELATED POSTS */}
-        {/* <SubSingleRelatedPosts type={postData.post[0].refauthors.id === '153de11c-9ce8-4d79-9d19-c10da778e84c' ? 'authors': 'refauthors'} category={postData.post[0].category.id} postTitle={postData.post[0].posttitle} domain1={postData.post[0].refauthors.id === '153de11c-9ce8-4d79-9d19-c10da778e84c' ? domain1 : postData.post[0].refauthors.id} domain2={domain2} /> */}
+        <SubSingleRelatedPosts type={postData.post[0].refauthors.id === '153de11c-9ce8-4d79-9d19-c10da778e84c' ? 'authors': 'refauthors'} category={postData.post[0].category.id} postTitle={postData.post[0].posttitle} domain1={postData.post[0].refauthors.id === '153de11c-9ce8-4d79-9d19-c10da778e84c' ? domain1 : postData.post[0].refauthors.id} domain2={domain2} />
       </div>
   );
 };
