@@ -83,14 +83,14 @@ const PageSingle = async ({ params }: { params: { slug: string } }) => {
   // }
   return (
       <div className={`nc-PageSingle bg-white dark:bg-slate-800 pt-8 lg:pt-16`}>
-        <div className="container rounded-xl">
+        {/* <div className="container rounded-xl">
           <div className="max-w-screen-md mx-auto">
             <SubSingleHeader postData={postData.post} />
           </div>
-        </div>
+        </div> */}
 
         {/* FEATURED IMAGE */}
-        <NcImage
+        {/* <NcImage
           alt="single"
           containerClassName="container my-10 sm:my-12"
           className="w-full rounded-xl"
@@ -98,12 +98,12 @@ const PageSingle = async ({ params }: { params: { slug: string } }) => {
           width={1260}
           height={750}
           sizes="(max-width: 1024px) 100vw, 1280px"
-        />
+        /> */}
 
         {/* SINGLE MAIN CONTENT */}
-        <div className="container mt-10">
+        {/* <div className="container mt-10">
           <SubSingleContent data={postData.post[0].post} author={postData.post[0].authors} />
-        </div>
+        </div> */}
   
         {/* RELATED POSTS */}
         {/* <SubSingleRelatedPosts type={postData.post[0].refauthors.id === '153de11c-9ce8-4d79-9d19-c10da778e84c' ? 'authors': 'refauthors'} category={postData.post[0].category.id} postTitle={postData.post[0].posttitle} domain1={postData.post[0].refauthors.id === '153de11c-9ce8-4d79-9d19-c10da778e84c' ? domain1 : postData.post[0].refauthors.id} domain2={domain2} /> */}
