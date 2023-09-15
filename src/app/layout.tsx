@@ -131,17 +131,17 @@ export default async function RootLayout({
         {headerScripts}
       </head> */}
       <body className={` bg-[#f8f8f8] text-base dark:bg-neutral-900/95 text-neutral-900 dark:text-neutral-200`}>
-        {/* <SubHeader2 
+        <SubHeader2 
           domain1={domain1}
           domain2={domain2}
           author={authorData}
           nav={navigationData}
-        /> */}
+        />
         {children}
-        {/* <SubFooter
+        <SubFooter
           authors={authorData}
           menus={navigationData}
-        /> */}
+        />
         {/* {footerScripts} */}
       </body>
     </html>
