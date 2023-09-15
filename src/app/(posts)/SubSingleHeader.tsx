@@ -39,11 +39,11 @@ const SubSingleHeader: FC<SingleHeaderProps> = ({
             mainClass={titleMainClass}
             title={title}
           />
-          {excerpt && (
+          {/* {excerpt && (
             <span className="block text-base text-neutral-500 md:text-lg dark:text-neutral-400 pb-1">
               {excerpt}
             </span>
-          )}
+          )} */}
           <div className="w-full border-b border-neutral-200 dark:border-neutral-700"></div>
           <div className="flex flex-col sm:flex-row justify-between sm:items-end space-y-5 sm:space-y-0 sm:space-x-5">
             {/* <SubPostMeta2
