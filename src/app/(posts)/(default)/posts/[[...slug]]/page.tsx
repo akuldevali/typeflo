@@ -42,32 +42,32 @@ const fetchPost = async (postslug: string, domain1: string, domain2: string) => 
     }
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { domain1, domain2 } = getAuthorSlugv2();
+// export async function generateMetadata({ params }: Props): Promise<Metadata> {
+//   const { domain1, domain2 } = getAuthorSlugv2();
 
-  const { errors, post } = await fetchPost(params.slug, domain1, domain2);
+//   const { errors, post } = await fetchPost(params.slug, domain1, domain2);
 
-  if(errors) {
-    return {
-      title: 'Typeflo',
-      description: '',
-      keywords: 'Typeflo Blog typeflo',
-    };
+//   if(errors) {
+//     return {
+//       title: 'Typeflo',
+//       description: '',
+//       keywords: 'Typeflo Blog typeflo',
+//     };
     
-  }else if(post.length == 0) { 
-    return {
-      title: 'Typeflo',
-      description: '',
-      keywords: 'Typeflo Blog typeflo',
-    };
+//   }else if(post.length == 0) { 
+//     return {
+//       title: 'Typeflo',
+//       description: '',
+//       keywords: 'Typeflo Blog typeflo',
+//     };
 
-  }
-  return {
-    title: (post[0].metatitle === null ? post[0].title : post[0].metatitle) + ' | ' + post[0].authors.metatitle,
-    description: post[0].metadescription,
-    keywords: post[0].title + ' ' + post[0].category.name + ' ' + post[0].authors.metatitle,
-  };
-}
+//   }
+//   return {
+//     title: (post[0].metatitle === null ? post[0].title : post[0].metatitle) + ' | ' + post[0].authors.metatitle,
+//     description: post[0].metadescription,
+//     keywords: post[0].title + ' ' + post[0].category.name + ' ' + post[0].authors.metatitle,
+//   };
+// }
 
 const PageSingle = async ({ params }: { params: { slug: string } }) => {
   //console.log(params.slug)
