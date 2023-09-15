@@ -18,10 +18,8 @@ const SubSingleContent: FC<SingleContentProps> = ({ data, author }) => {
         <div
           id="single-entry-content"
           className="prose lg:prose-lg !max-w-screen-md mx-auto dark:prose-invert"
-        >
-          {data}
-          {/* <SubSingleContentDemo data={data} /> */}
-        </div>
+          dangerouslySetInnerHTML={{__html: data}}
+        />
 
       </div>
       <div className="container">
