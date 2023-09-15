@@ -1,6 +1,8 @@
 import React, { FC } from "react";
 import SubCategoryBadgeList from "@/components/CategoryBadgeList/SubCategoryBadgeList";
 import SingleTitle from "./SingleTitle";
+import SubPostMeta2 from "@/components/PostMeta2/SubPostMeta2";
+import SubSingleMetaAction2 from "./SubSingleMetaAction2";
 import dynamic from 'next/dynamic';
 
 export interface SingleHeaderProps {
@@ -10,13 +12,13 @@ export interface SingleHeaderProps {
   className?: string;
 }
 
-const SubPostMeta2 = dynamic(() => import('@/components/PostMeta2/SubPostMeta2'), {
-  ssr: false,
-})
+// const SubPostMeta2 = dynamic(() => import('@/components/PostMeta2/SubPostMeta2'), {
+//   ssr: false,
+// })
 
-const SubSingleMetaAction2 = dynamic(() => import('@/app/(posts)/SubSingleMetaAction2'), {
-  ssr: false,
-})
+// const SubSingleMetaAction2 = dynamic(() => import('@/app/(posts)/SubSingleMetaAction2'), {
+//   ssr: false,
+// })
 
 const SubSingleHeader: FC<SingleHeaderProps> = ({
   titleMainClass,
