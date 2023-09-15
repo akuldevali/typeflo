@@ -42,19 +42,34 @@ const fetchPost = async (postslug: string, domain1: string, domain2: string) => 
     }
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+const fetchPostMeta = async (postslug: string) => {
   const { domain1, domain2 } = getAuthorSlugv2();
 
-  const { errors, post } = await fetchPost(params.slug, domain1, domain2);
+  const { data, error } = await supabaseClient
+    .from('posts')
+    .select(`title, metatitle, metadescription`)
+    .eq('posttitle', postslug)
+    .eq('authors.username', domain1)
+    .eq('authors.cus_domain', domain2)
+    
+    if (error) {
+      return { error: true, data: [] };
+    }
+    return { error: false, data: data };
+}
 
-  if(errors) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+
+  const { error, data } = await fetchPostMeta(params.slug);
+
+  if(error) {
     return {
       title: 'Typeflo',
       description: '',
       keywords: 'Typeflo Blog typeflo',
     };
     
-  }else if(post.length == 0) { 
+  }else if(data.length == 0) { 
     return {
       title: 'Typeflo',
       description: '',
@@ -63,9 +78,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   }
   return {
-    title: (post[0].metatitle === null ? post[0].title : post[0].metatitle) + ' | ' + post[0].authors.metatitle,
-    description: post[0].metadescription,
-    keywords: post[0].title + ' ' + post[0].category.name + ' ' + post[0].authors.metatitle,
+    title: (data[0].metatitle === null ? data[0].title : data[0].metatitle),
+    description: data[0].metadescription,
   };
 }
 
