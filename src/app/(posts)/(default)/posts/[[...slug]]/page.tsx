@@ -26,7 +26,7 @@ const fetchPost = async (postslug: string, domain1: string, domain2: string) => 
 
   const { data, error } = await supabaseClient
     .from('posts')
-    .select(`*, authors!inner(metatitle, newsletterC, users!users(*)), category!inner(*), refauthors!inner(*)`)
+    .select(`*, authors!inner(username, cus_domain, metatitle, newsletterC, users!users(*)), category!inner(*), refauthors!inner(*)`)
     .eq('posttitle', postslug)
     .eq('authors.username', domain1)
     .eq('authors.cus_domain', domain2)
@@ -47,7 +47,7 @@ const fetchPostMeta = async (postslug: string) => {
 
   const { data, error } = await supabaseClient
     .from('posts')
-    .select(`title, metatitle, metadescription`)
+    .select(`title, metatitle, metadescription, authors!inner(username, cus_domain)`)
     .eq('posttitle', postslug)
     .eq('authors.username', domain1)
     .eq('authors.cus_domain', domain2)
