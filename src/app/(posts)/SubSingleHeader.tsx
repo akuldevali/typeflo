@@ -54,7 +54,7 @@ const SubSingleHeader: FC<SingleHeaderProps> = ({
               meta={{ created_at, authors, reading_time, refauthors }}
               avatarRounded="rounded-full shadow-inner"
             />
-            <SubSingleMetaAction2 meta={{ title, href }} />
+            {/* <SubSingleMetaAction2 meta={{ title, href }} /> */}
           </div>
         </div>
       </div>
