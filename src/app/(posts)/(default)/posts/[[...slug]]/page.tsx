@@ -42,6 +42,10 @@ const fetchPost = async (postslug: string, domain1: string, domain2: string) => 
     }
 }
 
+export const metadata: Metadata = {
+  title: "Typeflo",
+  description: "test"
+}
 // export async function generateMetadata({ params }: Props): Promise<Metadata> {
 //   const { domain1, domain2 } = getAuthorSlugv2();
 
