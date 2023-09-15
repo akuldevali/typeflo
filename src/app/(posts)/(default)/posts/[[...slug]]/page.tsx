@@ -16,7 +16,7 @@ const SubSingleRelatedPosts = dynamic(() => import("@/app/(posts)/SubSingleRelat
   ssr: false,
 })
 
-export const revalidate = 0;
+//export const revalidate = 0;
 
 const returnFun = (error: any, posts: any) => { 
   return { errors: error, post: posts };
