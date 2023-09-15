@@ -34,7 +34,7 @@ const SubSingleHeader: FC<SingleHeaderProps> = ({
     <>
       <div className={`nc-SingleHeader ${className}`}>
         <div className="space-y-5">
-          <SubCategoryBadgeList categories={category} />
+          {/* <SubCategoryBadgeList categories={category} /> */}
           <SingleTitle
             mainClass={titleMainClass}
             title={title}

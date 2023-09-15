@@ -12,7 +12,7 @@ const SingleTitle: FC<SingleTitleProps> = ({
   title,
 }) => {
   return (
-    <h1 className={className + " " + mainClass + " max-w-4xl "} title={title}>
+    <h1 className={className + " " + mainClass + " max-w-4xl "} >
       {title}
     </h1>
   );
