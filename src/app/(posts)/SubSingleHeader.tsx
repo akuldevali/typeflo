@@ -46,14 +46,14 @@ const SubSingleHeader: FC<SingleHeaderProps> = ({
           )}
           <div className="w-full border-b border-neutral-200 dark:border-neutral-700"></div>
           <div className="flex flex-col sm:flex-row justify-between sm:items-end space-y-5 sm:space-y-0 sm:space-x-5">
-            <SubPostMeta2
+            {/* <SubPostMeta2
               size="large"
               className="leading-none flex-shrink-0"
               hiddenCategories 
               type={refauthors.id === '153de11c-9ce8-4d79-9d19-c10da778e84c' ? 'authors': 'refauthors'}
               meta={{ created_at, authors, reading_time, refauthors }}
               avatarRounded="rounded-full shadow-inner"
-            />
+            /> */}
             {/* <SubSingleMetaAction2 meta={{ title, href }} /> */}
           </div>
         </div>
