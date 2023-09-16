@@ -37,15 +37,15 @@ const Card10V3: FC<Card10V3Props> = ({
       <div className="w-full h-full grid grid-rows-2 gap-2">
         <div className="grid grid-cols-3 gap-2 ">
           <NcImage
+            layout="fill"
             alt=""
-            fill
             containerClassName="relative col-span-2"
             className="absolute inset-0 object-cover w-full h-full"
             src={galleryImgs[0]}
           />
           <NcImage
+            layout="fill"
             alt=""
-            fill
             containerClassName="relative"
             className="absolute inset-0 object-cover w-full h-full"
             src={galleryImgs[1]}
@@ -53,15 +53,15 @@ const Card10V3: FC<Card10V3Props> = ({
         </div>
         <div className="grid grid-cols-3 gap-2 ">
           <NcImage
+            layout="fill"
             alt=""
-            fill
             containerClassName="relative"
             className="absolute inset-0 object-cover w-full h-full"
             src={galleryImgs[2]}
           />
           <NcImage
+            layout="fill"
             alt=""
-            fill
             containerClassName="relative col-span-2"
             className="absolute inset-0 object-cover w-full h-full"
             src={galleryImgs[3]}
@@ -77,8 +77,8 @@ const Card10V3: FC<Card10V3Props> = ({
       <div className="w-full h-full grid grid-cols-3 gap-2">
         <div className="grid ">
           <NcImage
+            layout="fill"
             alt=""
-            fill
             containerClassName="relative"
             className="absolute inset-0 object-cover w-full h-full"
             src={galleryImgs[0]}
@@ -86,15 +86,15 @@ const Card10V3: FC<Card10V3Props> = ({
         </div>
         <div className="grid grid-rows-2 gap-2">
           <NcImage
+            layout="fill"
             alt=""
-            fill
             containerClassName="relative"
             className="absolute inset-0 object-cover w-full h-full"
             src={galleryImgs[1]}
           />
           <NcImage
+            layout="fill"
             alt=""
-            fill
             containerClassName="relative"
             className="absolute inset-0 object-cover w-full h-full"
             src={galleryImgs[2]}
@@ -103,7 +103,7 @@ const Card10V3: FC<Card10V3Props> = ({
         <div className="grid ">
           <NcImage
             alt=""
-            fill
+            layout="fill"
             containerClassName="relative"
             className="absolute inset-0 object-cover w-full h-full"
             src={galleryImgs[3]}
@@ -133,7 +133,7 @@ const Card10V3: FC<Card10V3Props> = ({
         <Link
           href={href}
           className="absolute inset-0 bg-neutral-900 bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity"
-        ></Link>
+          legacyBehavior></Link>
       </div>
       <div className="absolute top-3 inset-x-3 flex justify-between items-start space-x-4">
         <CategoryBadgeList categories={categories} />
@@ -142,7 +142,7 @@ const Card10V3: FC<Card10V3Props> = ({
 
       <div className="space-y-2.5 mt-4 px-4">
         <h2 className="nc-card-title block sm:text-lg font-semibold text-neutral-900 dark:text-neutral-100 ">
-          <Link href={href} className="line-clamp-1" title={title}>
+          <Link href={href} className="line-clamp-1" title={title} legacyBehavior>
             {title}
           </Link>
         </h2>

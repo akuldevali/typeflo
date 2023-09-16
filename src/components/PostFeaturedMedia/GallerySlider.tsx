@@ -2,7 +2,7 @@
 
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import { AnimatePresence, motion, MotionConfig } from "framer-motion";
-import Image, { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/legacy/image";
 import { useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import { variants } from "@/utils/animationVariants";
@@ -86,8 +86,8 @@ export default function GallerySlider({
                 className="absolute inset-0"
               >
                 <Image
+                  layout="fill"
                   src={currentImage || ""}
-                  fill
                   alt="listing card gallery"
                   className={`object-cover ${imageClass}`}
                   onLoadingComplete={() => setLoaded(true)}

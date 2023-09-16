@@ -19,7 +19,7 @@ const Card13: FC<Card13Props> = ({ className = "", post }) => {
         <h2
           className={`nc-card-title block font-semibold text-sm sm:text-base`}
         >
-          <Link href={href} className="line-clamp-2" title={title}>
+          <Link href={href} className="line-clamp-2" title={title} legacyBehavior>
             {title}
           </Link>
         </h2>
@@ -37,12 +37,12 @@ const Card13: FC<Card13Props> = ({ className = "", post }) => {
       <Link
         href={href}
         className={`block relative h-full flex-shrink-0 w-24 sm:w-36 lg:w-40 xl:w-48 2xl:w-[200px] ml-4 sm:ml-5`}
-      >
+        legacyBehavior>
         <NcImage
           containerClassName="absolute inset-0"
           className="object-cover w-full h-full rounded-xl sm:rounded-3xl"
           src={featuredImage}
-          fill
+          layout="fill"
           alt={title}
         />
         <PostTypeFeaturedIcon

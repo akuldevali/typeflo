@@ -6,7 +6,7 @@ import PostCardLikeAndComment from "@/components/PostCardLikeAndComment/PostCard
 import CategoryBadgeList from "@/components/CategoryBadgeList/CategoryBadgeList";
 import PostTypeFeaturedIcon from "@/components/PostTypeFeaturedIcon/PostTypeFeaturedIcon";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 export interface Card7Props {
   className?: string;
@@ -40,9 +40,12 @@ const Card7: FC<Card7Props> = ({
         <PostCardLikeAndComment className="relative" />
         <PostCardSaveAction className="relative" hidenReadingTime />
       </div>
-      <Link href={href} className={`flex items-start relative w-full ${ratio}`}>
+      <Link
+        href={href}
+        className={`flex items-start relative w-full ${ratio}`}
+        legacyBehavior>
         <Image
-          fill
+          layout="fill"
           alt=""
           sizes="(max-width: 600px) 480px,800px"
           className="object-cover w-full h-full rounded-3xl "
@@ -58,11 +61,11 @@ const Card7: FC<Card7Props> = ({
       </Link>
 
       <div className="absolute bottom-3 inset-x-3 p-4 bg-white dark:bg-neutral-900 flex flex-col flex-grow rounded-3xl group-hover:shadow-2xl transition-shadow">
-        <Link href={href} className="absolute inset-0"></Link>
+        <Link href={href} className="absolute inset-0" legacyBehavior></Link>
         <div className="space-y-2.5 mb-3">
           <CategoryBadgeList categories={categories} />
           <h2 className="block text-base font-semibold text-neutral-900 dark:text-neutral-100 ">
-            <Link href={href} title={title} className="line-clamp-2">
+            <Link href={href} title={title} className="line-clamp-2" legacyBehavior>
               {title}
             </Link>
           </h2>

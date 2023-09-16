@@ -114,6 +114,7 @@ const Header: FC<HeaderProps> = ({ domain1, domain2, author, nav }) => {
   const renderSingleHeader = () => {
     if (!isSingleHeaderShowing) return null;
     return (
+      <>
       <div className="nc-SingleHeaderMenu">
         <div className="absolute top-full left-0 w-full progress-container h-[5px] bg-neutral-300 overflow-hidden">
           <div
@@ -122,6 +123,7 @@ const Header: FC<HeaderProps> = ({ domain1, domain2, author, nav }) => {
           />
         </div>
       </div>
+      </>
     );
   };
 

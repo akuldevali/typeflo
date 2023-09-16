@@ -2,7 +2,7 @@
 
 import React, { FC, useEffect, useRef } from "react";
 import NcModal from "@/components/NcModal/NcModal";
-import SingleCommentForm from "@/app/(singles)/SingleCommentForm";
+//import SingleCommentForm from "@/app/(singles)/SingleCommentForm";
 
 export interface ModalEditCommentProps {
   show: boolean;
@@ -32,16 +32,17 @@ const ModalEditComment: FC<ModalEditCommentProps> = ({
 
   const renderContent = () => {
     return (
-      <SingleCommentForm
-        className="mt-0"
-        onClickCancel={onCloseModalEditComment}
-        onClickSubmit={onCloseModalEditComment}
-        defaultValue={
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi consequuntur perferendis maxime quia, quisquam eveniet asperiores fuga laudantium necessitatibus assumenda!"
-        }
-        textareaRef={textareaRef}
-        rows={8}
-      />
+      // <SingleCommentForm
+      //   className="mt-0"
+      //   onClickCancel={onCloseModalEditComment}
+      //   onClickSubmit={onCloseModalEditComment}
+      //   defaultValue={
+      //     "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi consequuntur perferendis maxime quia, quisquam eveniet asperiores fuga laudantium necessitatibus assumenda!"
+      //   }
+      //   textareaRef={textareaRef}
+      //   rows={8}
+      // />
+      <></>
     );
   };
 

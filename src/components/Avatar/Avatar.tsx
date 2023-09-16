@@ -2,7 +2,7 @@
 
 import { avatarColors } from "@/contains/contants";
 import { _getAvatarRd } from "@/contains/fakeData";
-import Image, { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/legacy/image";
 import React, { FC, useEffect, useState } from "react";
 
 export interface AvatarProps {
@@ -36,7 +36,7 @@ const Avatar: FC<AvatarProps> = ({
     >
       {url && (
         <Image
-          fill
+          layout="fill"
           sizes="100px"
           className="absolute inset-0 w-full h-full object-cover"
           src={url}

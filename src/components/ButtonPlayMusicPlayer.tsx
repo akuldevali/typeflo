@@ -7,7 +7,7 @@ import iconPlaying from "@/images/icon-playing.gif";
 import PostTypeFeaturedIcon from "@/components/PostTypeFeaturedIcon/PostTypeFeaturedIcon";
 import { PostDataType } from "@/data/types";
 import { useMusicPlayer } from "@/hooks/useMusicPlayer";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 export interface ButtonPlayMusicPlayerProps {
   className?: string;
@@ -77,7 +77,7 @@ const ButtonPlayMusicPlayer: FC<ButtonPlayMusicPlayerProps> = ({
 
     return (
       <span className="z-10 bg-neutral-900 bg-opacity-60 rounded-full flex  items-center justify-center text-xl text-white border border-white w-11 h-11 cursor-pointer">
-        <Image className="w-5" src={iconPlaying} alt="paused" />
+        <Image layout="fill" className="w-5" src={iconPlaying} alt="paused" />
       </span>
     );
   };

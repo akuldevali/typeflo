@@ -43,9 +43,11 @@ export const renderDarkMode = (darkmode: any, darkmodeState: any) => {
 export const renderLogo = (author: any, darkmodeState: boolean) => {
   
     if(author[0].logoimg == null) { 
-      return <Link href="/" className="ttnc-logo inline-block">
-        <h2 className={`text-2xl md:text-2xl font-semibold`}>{author[0].metatitle.toUpperCase()}</h2>
-      </Link>
+      return (
+        <Link href="/" className="ttnc-logo inline-block" legacyBehavior>
+          <h2 className={`text-2xl md:text-2xl font-semibold`}>{author[0].metatitle.toUpperCase()}</h2>
+        </Link>
+      );
     }else {
       if(darkmodeState === false) { 
         return <SubLogo img={author[0].logoimg} title={author[0].metatitle} />
@@ -97,13 +99,11 @@ const SubMainNav1: FC<MainNav1Props> = ({ domain1, domain2, author, nav }) => {
               <div className="px-1"></div>
               {
                 buttons.length != 0 && (
-                  <Link href={buttons[0].link} target="_blank">
-                    <Button
-                      sizeClass="py-3 px-4 sm:px-6"
-                      pattern="primary"
+                  <Link href={buttons[0].link} target="_blank" legacyBehavior>
+                    <div
                     >
                       {buttons[0].name}
-                    </Button>
+                    </div>
                   </Link>)
               }
             </div>

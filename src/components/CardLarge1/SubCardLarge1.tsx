@@ -39,13 +39,16 @@ const SubCardLarge1: FC<CardLarge1Props> = ({
       className={`nc-CardLarge1 nc-CardLarge1--hasAnimation relative flex flex-col justify-center items-center ${className}`}
     >
       <div className="w-full md:w-5/5 lg:w-3/3">
-        <Link href={href} className="nc-CardLarge1__right block relative">
+        <Link
+          href={href}
+          className="nc-CardLarge1__right block relative"
+          legacyBehavior>
           <NcImage
+            layout="fill"
             containerClassName="aspect-w-16 aspect-h-12 sm:aspect-h-9 md:aspect-h-14 lg:aspect-h-10 2xl:aspect-h-9 relative"
             className="absolute inset-0 object-cover rounded-3xl"
             src={featured_imghd}
             alt={title}
-            fill
             sizes="(max-width: 768px) 100vw, 50vw"
           />
           {/* META TYPE */}
@@ -60,7 +63,7 @@ const SubCardLarge1: FC<CardLarge1Props> = ({
           <SubCategoryBadgeList categories={category} />
 
           <h2 className="nc-card-title text-base sm:text-xl lg:text-2xl font-semibold ">
-            <Link href={href} className="line-clamp-2" title={title}>
+            <Link href={href} className="line-clamp-2" title={title} legacyBehavior>
               {title}
             </Link>
           </h2>

@@ -15,7 +15,7 @@ const Card5: FC<Card5Props> = ({ className = "", post }) => {
     <div
       className={`nc-Card5 relative p-5 group border border-neutral-200 hover:shadow-lg transition-shadow dark:border-neutral-700 rounded-3xl bg-white dark:bg-neutral-900 ${className}`}
     >
-      <Link href={href} className="absolute inset-0 rounded-lg"></Link>
+      <Link href={href} className="absolute inset-0 rounded-lg" legacyBehavior></Link>
 
       <div className="flex flex-col">
         <CategoryBadgeList categories={categories} />
@@ -23,7 +23,7 @@ const Card5: FC<Card5Props> = ({ className = "", post }) => {
           className="block text-base font-semibold text-neutral-800 dark:text-neutral-300 my-4"
           title={title}
         >
-          <Link href={href} className="line-clamp-2" title={title}>
+          <Link href={href} className="line-clamp-2" title={title} legacyBehavior>
             {title}
           </Link>
         </h2>

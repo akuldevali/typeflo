@@ -60,7 +60,7 @@ const ListingImageGallery: FC<Props> = ({ images, onClose, isShowModal }) => {
               setLastViewedPhoto(photoId);
               let params = new URLSearchParams(document.location.search);
               params.delete("photoId");
-              router.push(`${thisPathname}/?${params.toString()}`);
+              router.push("/");
             }}
           />
         )}
@@ -71,7 +71,7 @@ const ListingImageGallery: FC<Props> = ({ images, onClose, isShowModal }) => {
               key={id}
               onClick={() => {
                 const newPathname = getNewParam({ value: id });
-                router.push(`${thisPathname}/?${newPathname}`);
+                router.push("/");
               }}
               ref={id === Number(lastViewedPhoto) ? lastViewedPhotoRef : null}
               className="after:content group relative mb-5 block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight focus:outline-none"

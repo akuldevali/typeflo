@@ -4,7 +4,7 @@ import React, { FC } from "react";
 import { PostDataType } from "@/data/types";
 import Link from "next/link";
 import ButtonPlayMusicPlayer from "../ButtonPlayMusicPlayer";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { PauseIcon, PlayIcon } from "@heroicons/react/24/solid";
 
 export interface Card15PodcastProps {
@@ -45,11 +45,11 @@ const Card15Podcast: FC<Card15PodcastProps> = ({
         <Link
           href={href}
           className="block h-0 aspect-w-1 aspect-h-1 relative rounded-full overflow-hidden shadow-lg"
-        >
+          legacyBehavior>
           <Image
             className="object-cover w-full h-full"
             src={featuredImage}
-            fill
+            layout="fill"
             alt={title}
             sizes="100px"
           />
@@ -62,7 +62,7 @@ const Card15Podcast: FC<Card15PodcastProps> = ({
             href={href}
             className={IS_AUDIO ? `line-clamp-1` : "line-clamp-2"}
             title={title}
-          >
+            legacyBehavior>
             {title}
           </Link>
         </h2>

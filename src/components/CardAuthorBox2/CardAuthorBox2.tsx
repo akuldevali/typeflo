@@ -19,14 +19,14 @@ const CardAuthorBox2: FC<CardAuthorBox2Props> = ({
     <Link
       href={href}
       className={`nc-CardAuthorBox2 flex flex-col overflow-hidden bg-white dark:bg-neutral-800 rounded-3xl ${className}`}
-    >
+      legacyBehavior>
       <div className="relative flex-shrink-0 ">
         <div>
           <NcImage
+            layout="fill"
             alt="author"
             containerClassName="flex aspect-w-7 aspect-h-5 w-full h-0"
             src={bgImage || ""}
-            fill
             sizes="(max-width: 600px) 480px, 33vw"
           />
         </div>

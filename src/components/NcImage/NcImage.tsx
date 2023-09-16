@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import Image, { ImageProps } from "next/image";
+import Image, { ImageProps } from "next/legacy/image";
 
 export interface NcImageProps extends ImageProps {
   containerClassName?: string;

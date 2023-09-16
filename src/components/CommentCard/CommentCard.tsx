@@ -9,7 +9,7 @@ import ModalDeleteComment from "./ModalDeleteComment";
 import ModalReportItem from "@/components/ModalReportItem/ModalReportItem";
 import Link from "next/link";
 import { DEMO_AUTHORS } from "@/data/authors";
-import SingleCommentForm from "@/app/(singles)/SingleCommentForm";
+//import SingleCommentForm from "@/app/(singles)/SingleCommentForm";
 import CommentCardLikeReply from "../CommentCardLikeReply/CommentCardLikeReply";
 
 const DEMO_COMMENTS = [
@@ -138,80 +138,79 @@ const CommentCard: FC<CommentCardProps> = ({
 
   const renderCommentForm = () => {
     return (
-      <SingleCommentForm
-        textareaRef={textareaRef}
-        onClickSubmit={closeReplyForm}
-        onClickCancel={closeReplyForm}
-        className="flex-grow"
-      />
+      // <SingleCommentForm
+      //   textareaRef={textareaRef}
+      //   onClickSubmit={closeReplyForm}
+      //   onClickCancel={closeReplyForm}
+      //   className="flex-grow"
+      // />
+      <></>
     );
   };
 
-  return (
-    <>
-      <div className={`nc-CommentCard flex ${className}`}>
-        <Avatar
-          sizeClass={`h-6 w-6 text-base ${
-            size === "large" ? "sm:text-lg sm:h-8 sm:w-8" : ""
-          }`}
-          radius="rounded-full"
-          containerClassName="mt-4"
-        />
-        <div className="flex-grow flex flex-col p-4 ml-2 text-sm border border-neutral-200 rounded-xl sm:ml-3 sm:text-base dark:border-neutral-700">
-          {/* AUTHOR INFOR */}
-          <div className="relative flex items-center pr-6">
-            <div className="absolute -right-3 -top-3">
-              <NcDropDown
-                className={`p-2 text-neutral-500 flex items-center justify-center rounded-lg hover:text-neutral-800 dark:hover:text-neutral-200 sm:hover:bg-neutral-100 dark:hover:bg-neutral-800 ${twFocusClass()}`}
-                data={actions}
-                onClick={hanldeClickDropDown}
-              />
-            </div>
-            <Link
-              className="flex-shrink-0 font-semibold text-neutral-800 dark:text-neutral-100"
-              href={AUTHOR.href}
-            >
-              {AUTHOR.displayName}
-            </Link>
-            <span className="mx-2">·</span>
-            <span className="text-neutral-500 dark:text-neutral-400 text-xs line-clamp-1 sm:text-sm">
-              {date}
-            </span>
-          </div>
-
-          {/* CONTENT */}
-          <span className="block text-neutral-700 mt-2 mb-3 sm:mt-3 sm:mb-4 dark:text-neutral-300">
-            {content}
-          </span>
-
-          {/* ACTION LIKE REPLY */}
-          {isReplying ? (
-            renderCommentForm()
-          ) : (
-            <CommentCardLikeReply
-              className={className}
-              isLiked={like.isLiked}
-              likeCount={like.count}
-              onClickReply={() => setIsReplying(true)}
+  return <>
+    <div className={`nc-CommentCard flex ${className}`}>
+      <Avatar
+        sizeClass={`h-6 w-6 text-base ${
+          size === "large" ? "sm:text-lg sm:h-8 sm:w-8" : ""
+        }`}
+        radius="rounded-full"
+        containerClassName="mt-4"
+      />
+      <div className="flex-grow flex flex-col p-4 ml-2 text-sm border border-neutral-200 rounded-xl sm:ml-3 sm:text-base dark:border-neutral-700">
+        {/* AUTHOR INFOR */}
+        <div className="relative flex items-center pr-6">
+          <div className="absolute -right-3 -top-3">
+            <NcDropDown
+              className={`p-2 text-neutral-500 flex items-center justify-center rounded-lg hover:text-neutral-800 dark:hover:text-neutral-200 sm:hover:bg-neutral-100 dark:hover:bg-neutral-800 ${twFocusClass()}`}
+              data={actions}
+              onClick={hanldeClickDropDown}
             />
-          )}
+          </div>
+          <Link
+            className="flex-shrink-0 font-semibold text-neutral-800 dark:text-neutral-100"
+            href={AUTHOR.href}
+            legacyBehavior>
+            {AUTHOR.displayName}
+          </Link>
+          <span className="mx-2">·</span>
+          <span className="text-neutral-500 dark:text-neutral-400 text-xs line-clamp-1 sm:text-sm">
+            {date}
+          </span>
         </div>
-      </div>
 
-      <ModalEditComment
-        show={isEditting}
-        onCloseModalEditComment={closeModalEditComment}
-      />
-      <ModalReportItem
-        show={isReporting}
-        onCloseModalReportItem={closeModalReportComment}
-      />
-      <ModalDeleteComment
-        show={isDeleting}
-        onCloseModalDeleteComment={closeModalDeleteComment}
-      />
-    </>
-  );
+        {/* CONTENT */}
+        <span className="block text-neutral-700 mt-2 mb-3 sm:mt-3 sm:mb-4 dark:text-neutral-300">
+          {content}
+        </span>
+
+        {/* ACTION LIKE REPLY */}
+        {isReplying ? (
+          renderCommentForm()
+        ) : (
+          <CommentCardLikeReply
+            className={className}
+            isLiked={like.isLiked}
+            likeCount={like.count}
+            onClickReply={() => setIsReplying(true)}
+          />
+        )}
+      </div>
+    </div>
+
+    <ModalEditComment
+      show={isEditting}
+      onCloseModalEditComment={closeModalEditComment}
+    />
+    <ModalReportItem
+      show={isReporting}
+      onCloseModalReportItem={closeModalReportComment}
+    />
+    <ModalDeleteComment
+      show={isDeleting}
+      onCloseModalDeleteComment={closeModalDeleteComment}
+    />
+  </>;
 };
 
 export default CommentCard;

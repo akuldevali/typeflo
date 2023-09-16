@@ -16,7 +16,7 @@ const recentPosts = [
     href: "/single-gallery/demo-slug",
     date: "Mar 16, 2023",
     datetime: "2023-03-16",
-    category: { title: "Marketing", href: "/archive/demo-slug" },
+    category: { title: "Marketing", href: "/category/demo-slug" },
     imageUrl:
       "https://images.unsplash.com/photo-1678720175173-f57e293022e4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0MjJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
     description:
@@ -28,7 +28,7 @@ const recentPosts = [
     href: "/single-gallery/demo-slug",
     date: "Mar 10, 2023",
     datetime: "2023-03-10",
-    category: { title: "Sales", href: "/archive/demo-slug" },
+    category: { title: "Sales", href: "/category/demo-slug" },
     imageUrl:
       "https://images.unsplash.com/photo-1678846912726-667eda5a850f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyODh8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
     description:
@@ -45,7 +45,7 @@ export default function TemplatesDropdown() {
           href={{
             pathname: item.href || undefined,
           }}
-        >
+          legacyBehavior>
           {item.name}
         </Link>
       </li>
@@ -104,8 +104,8 @@ export default function TemplatesDropdown() {
                             >
                               <div className="relative flex-none">
                                 <NcImage
+                                  layout="fill"
                                   containerClassName="aspect-[2/1] w-full rounded-lg bg-gray-100 sm:aspect-[16/9] sm:h-32 lg:h-auto z-0"
-                                  fill
                                   className="rounded-lg object-cover"
                                   src={post.imageUrl}
                                   sizes="300px"
@@ -129,7 +129,7 @@ export default function TemplatesDropdown() {
                                   </a>
                                 </div>
                                 <h4 className="mt-2 text-sm font-semibold leading-6 text-gray-900">
-                                  <Link href={post.href as Route}>
+                                  <Link href={post.href as Route} legacyBehavior>
                                     <span className="absolute inset-0" />
                                     {post.title}
                                   </Link>

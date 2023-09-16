@@ -6,7 +6,7 @@ import CategoryBadgeList from "@/components/CategoryBadgeList/CategoryBadgeList"
 import PostTypeFeaturedIcon from "@/components/PostTypeFeaturedIcon/PostTypeFeaturedIcon";
 import PostFeaturedMedia from "@/components/PostFeaturedMedia/PostFeaturedMedia";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 export interface Card19Props {
   className?: string;
@@ -52,13 +52,13 @@ const Card19: FC<Card19Props> = ({
           <PostFeaturedMedia post={post} />
         </div>
       ) : (
-        <Link href={href}>
+        <Link href={href} legacyBehavior>
           <Image
             sizes="(max-width: 600px) 480px, 800px"
             className="object-cover w-full h-full rounded-xl"
             src={featuredImage}
             alt="post"
-            fill
+            layout="fill"
           />
           <PostTypeFeaturedIcon
             className="absolute top-3 left-3 group-hover:hidden"
@@ -72,9 +72,9 @@ const Card19: FC<Card19Props> = ({
       <Link
         href={href}
         className="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-black opacity-80"
-      ></Link>
+        legacyBehavior></Link>
       <div className="absolute bottom-0 inset-x-0 p-5 sm:p-10 flex flex-col flex-grow">
-        <Link href={href} className="absolute inset-0"></Link>
+        <Link href={href} className="absolute inset-0" legacyBehavior></Link>
         {showCategories && (
           <div className="mb-3">
             <CategoryBadgeList categories={categories} />

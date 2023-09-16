@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import ButtonPrimary from "@/components/Button/ButtonPrimary";
 import Link from "next/link";
-import Image, { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/legacy/image";
 import dogPng from "@/images/dog.png";
 
 export interface CardCategory3Props {
@@ -11,15 +11,16 @@ export interface CardCategory3Props {
 const CardCategory3: FC<CardCategory3Props> = ({ className = "" }) => {
   return (
     <Link
-      href={"/archive/demo-slug"}
+      href={"/category/demo-slug"}
       className={`nc-CardCategory3 block ${className}`}
-    >
+      legacyBehavior>
       <div
         className={`relative w-full aspect-w-16 aspect-h-11 sm:aspect-h-9 h-0 rounded-2xl overflow-hidden group bg-sky-100`}
       >
         <div>
           <div className="absolute inset-5 sm:inset-8">
             <Image
+              layout="fill"
               alt="ads"
               src={dogPng}
               className="absolute right-0 w-1/2 max-w-[260px] h-full object-contain drop-shadow-xl"

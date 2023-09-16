@@ -14,7 +14,7 @@ const CardAuthor: FC<CardAuthorProps> = ({ className = "", author }) => {
     <Link
       href={href}
       className={`nc-CardAuthor flex items-center ${className}`}
-    >
+      legacyBehavior>
       <Avatar
         sizeClass="h-10 w-10 text-base"
         containerClassName="flex-shrink-0 mr-4"

@@ -16,7 +16,10 @@ const NcLink: FC<NcLinkProps> = ({
   href,
 }) => {
   return (
-    <Link className={`nc-NcLink ${colorClass} ${className}`} href={href}>
+    <Link
+      className={`nc-NcLink ${colorClass} ${className}`}
+      href={href}
+      legacyBehavior>
       {children}
     </Link>
   );

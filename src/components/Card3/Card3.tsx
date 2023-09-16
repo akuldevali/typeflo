@@ -31,7 +31,7 @@ const Card3: FC<Card3Props> = ({ className = "h-full", post }) => {
       <div className="flex flex-col flex-grow">
         <div className="space-y-3.5">
           <CategoryBadgeList categories={categories} />
-          <Link href={href} className="block">
+          <Link href={href} className="block" legacyBehavior>
             <h2
               className={`nc-card-title block font-medium sm:font-semibold text-neutral-900 dark:text-neutral-100 text-sm sm:text-base xl:text-lg`}
             >
@@ -60,11 +60,11 @@ const Card3: FC<Card3Props> = ({ className = "h-full", post }) => {
         <Link
           href={href}
           className="block w-full h-0 aspect-h-1 aspect-w-1 relative"
-        >
+          legacyBehavior>
           <NcImage
             containerClassName="absolute inset-0"
             src={featuredImage}
-            fill
+            layout="fill"
             alt={title}
           />
           <span>

@@ -6,7 +6,7 @@ import CategoryBadgeList from "@/components/CategoryBadgeList/CategoryBadgeList"
 import PostTypeFeaturedIcon from "@/components/PostTypeFeaturedIcon/PostTypeFeaturedIcon";
 import PostFeaturedMedia from "@/components/PostFeaturedMedia/PostFeaturedMedia";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 export interface Card9Props {
   className?: string;
@@ -33,7 +33,7 @@ const Card9: FC<Card9Props> = ({
               {title}
             </span>
           </h2>
-          <Link href={author.href} className="flex mt-2.5 relative">
+          <Link href={author.href} className="flex mt-2.5 relative" legacyBehavior>
             <span className="block text-neutral-200 hover:text-white font-medium truncate">
               {author.displayName}
             </span>
@@ -59,9 +59,9 @@ const Card9: FC<Card9Props> = ({
           <PostFeaturedMedia post={post} />
         </div>
       ) : (
-        <Link href={href}>
+        <Link href={href} legacyBehavior>
           <Image
-            fill
+            layout="fill"
             alt=""
             className="object-cover w-full h-full rounded-3xl"
             src={featuredImage}
@@ -79,9 +79,9 @@ const Card9: FC<Card9Props> = ({
       <Link
         href={href}
         className="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-black opacity-50"
-      ></Link>
+        legacyBehavior></Link>
       <div className="absolute bottom-0 inset-x-0 p-4 flex flex-col flex-grow">
-        <Link href={href} className="absolute inset-0"></Link>
+        <Link href={href} className="absolute inset-0" legacyBehavior></Link>
         <div className="mb-3">
           <CategoryBadgeList categories={categories} />
         </div>

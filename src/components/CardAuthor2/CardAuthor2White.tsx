@@ -16,7 +16,7 @@ const CardAuthor2White: FC<CardAuthor2WhiteProps> = ({
     <Link
       href={href}
       className={`nc-CardAuthor2White relative inline-flex items-center ${className}`}
-    >
+      legacyBehavior>
       <Avatar
         sizeClass="h-10 w-10 text-base"
         containerClassName="flex-shrink-0 mr-3"

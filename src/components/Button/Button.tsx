@@ -58,14 +58,19 @@ const Button: FC<ButtonProps> = ({
 
   let CLASSES = `nc-Button flex-shrink-0 relative h-auto inline-flex items-center justify-center rounded-full transition-colors border-transparent ${colors} ${fontSize} ${sizeClass} ${className} `;
 
-  if (!!href) {
-    return (
-      <Link href={href} className={`${CLASSES} `} onClick={onClick} type={type}>
-        {loading && <Loading />}
-        {children || `This is Link`}
-      </Link>
-    );
-  }
+  // if (!!href) {
+  //   return (
+  //     <Link
+  //       href={href}
+  //       className={`${CLASSES} `}
+  //       onClick={onClick}
+  //       type={type}
+  //       legacyBehavior>
+  //       {loading && <Loading />}
+  //       {children || `This is Link`}
+  //     </Link>
+  //   );
+  // }
 
   return (
     <button

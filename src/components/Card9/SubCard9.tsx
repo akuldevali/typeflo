@@ -7,7 +7,7 @@ import SubCategoryBadgeList from "@/components/CategoryBadgeList/SubCategoryBadg
 import PostTypeFeaturedIcon from "@/components/PostTypeFeaturedIcon/PostTypeFeaturedIcon";
 import PostFeaturedMedia from "@/components/PostFeaturedMedia/PostFeaturedMedia";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { useReadingTime } from "react-hook-reading-time";
 
 export interface Card9Props {
@@ -59,22 +59,24 @@ const SubCard9: FC<Card9Props> = ({
       className={`nc-Card9 relative flex flex-col group rounded-3xl overflow-hidden z-0 ${hoverClass} ${className}`}
     >
       <div className={`flex items-start relative w-full ${ratio}`}></div>
-        <Link href={postHref}>
+        <Link href={postHref} legacyBehavior>
+          <>
           <Image
-            fill
+            layout="fill"
             alt={title}
             className="object-cover w-full h-full rounded-3xl"
             src={featured_imgsd}
             sizes="(max-width: 600px) 480px, 500px"
           />
           <span className="absolute inset-0 bg-black bg-opacity-10 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+          </>
         </Link>
       <Link
         href={postHref}
         className="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-black opacity-50"
-      ></Link>
+        legacyBehavior><div></div></Link>
       <div className="absolute bottom-0 inset-x-0 p-4 flex flex-col flex-grow">
-        <Link href={postHref} className="absolute inset-0"></Link>
+        <Link href={postHref} className="absolute inset-0" legacyBehavior><div></div></Link>
         <div className="mb-3">
             <SubCategoryBadgeList categories={category} />
         </div>

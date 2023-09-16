@@ -15,7 +15,10 @@ const SubLogo: React.FC<LogoProps> = ({
   title,
 }) => {
   return (
-    <Link href="/" className="ttnc-logo inline-block text-primary-6000">
+    <Link
+      href="/"
+      className="ttnc-logo inline-block text-primary-6000"
+      legacyBehavior>
       {/* THIS USE FOR MY MULTI DEMO */}
       {/* IF YOU ARE MY CLIENT. PLESE DELETE THIS CODE AND YOU YOUR IMAGE PNG BY BELLOW CODE */}
       

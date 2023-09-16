@@ -106,10 +106,10 @@ const PlayerContent: FC<PlayerContentProps> = ({
         <Link
           href={href}
           className="relative h-14 sm:h-16 flex items-center space-x-2 sm:space-x-3 pl-12 overflow-hidden"
-        >
+          legacyBehavior>
           <NcImage
             alt={title}
-            fill
+            layout="fill"
             sizes="3rem"
             containerClassName={`absolute left-0 w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 transition-transform nc-animation-spin rounded-full ${
               playing ? "playing" : ""

@@ -29,7 +29,7 @@ const SectionMagazine6: FC<SectionMagazine6Props> = ({
         {/* Image */}
         <div className="aspect-w-9 aspect-h-9 md:aspect-h-5 rounded-3xl lg:rounded-[40px] overflow-hidden">
           <Image
-            fill
+            layout="fill"
             alt=""
             sizes="(max-width: 1024px) 100vw, 1280px"
             src={featuredImage}

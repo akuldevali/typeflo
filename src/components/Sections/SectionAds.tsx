@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import imgAdsDef from "@/images/ads.png";
-import Image, { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/legacy/image";
 
 export interface SectionAdsProps {
   className?: string;
@@ -17,7 +17,8 @@ const SectionAds: FC<SectionAdsProps> = ({
       className={`nc-SectionAds block text-center mx-auto ${className}`}
     >
       <span className="text-xs text-neutral-500">- Advertisement -</span>
-      <Image className="mx-auto" src={imgAds} alt="ads" />
+      <Image className="mx-auto" src={imgAds} alt="ads" 
+        layout="fill"/>
     </a>
   );
 };

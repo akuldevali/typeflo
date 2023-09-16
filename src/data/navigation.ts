@@ -12,55 +12,50 @@ export const MEGAMENU_TEMPLATES: NavItemType[] = [
     name: "Home Page",
     children: [
       { id: randomId(), href: "/", name: "Home page 1" },
-      { id: randomId(), href: "/home-2", name: "Home page 2" },
-      { id: randomId(), href: "/home-3", name: "Home page 3" },
-      { id: randomId(), href: "/home-4", name: "Home page 4" },
-      { id: randomId(), href: "/home-6", name: "Home page 5" },
       { id: randomId(), href: "/", name: "Header style 1", isNew: true },
-      { id: randomId(), href: "/home-2", name: "Header style 2", isNew: true },
     ],
   },
 
   // single pages ---------
   {
     id: randomId(),
-    href: "/single/demo-slug" as Route,
+    href: "/posts/demo-slug" as Route,
     name: "Single Pages",
     children: [
       {
         id: randomId(),
-        href: "/single/demo-slug" as Route,
+        href: "/posts/demo-slug" as Route,
         name: "Single page 1",
       },
       {
         id: randomId(),
-        href: "/single-2/demo-slug" as Route,
+        href: "/posts/demo-slug" as Route,
         name: "Single page 2",
       },
       {
         id: randomId(),
-        href: "/single-3/demo-slug" as Route,
+        href: "/posts/demo-slug" as Route,
         name: "Single page 3",
       },
       {
         id: randomId(),
-        href: "/single-4/demo-slug" as Route,
+        href: "/posts/demo-slug" as Route,
         name: "Single page 4",
       },
 
       {
         id: randomId(),
-        href: "/single-audio/demo-slug" as Route,
+        href: "/posts/demo-slug" as Route,
         name: "Single Audio",
       },
       {
         id: randomId(),
-        href: "/single-video/demo-slug" as Route,
+        href: "/posts/demo-slug" as Route,
         name: "Single Video",
       },
       {
         id: randomId(),
-        href: "/single-gallery/demo-slug" as Route,
+        href: "/posts/demo-slug" as Route,
         name: "Single Gallery",
         isNew: true,
       },
@@ -75,17 +70,17 @@ export const MEGAMENU_TEMPLATES: NavItemType[] = [
     children: [
       {
         id: randomId(),
-        href: "/archive/demo-slug" as Route,
+        href: "/category/demo-slug" as Route,
         name: "Category page",
       },
       {
         id: randomId(),
-        href: "/archive-2/demo-slug" as Route,
+        href: "/category/demo-slug" as Route,
         name: "Category audio",
       },
       {
         id: randomId(),
-        href: "/archive-3/demo-slug" as Route,
+        href: "/category/demo-slug" as Route,
         name: "Category videos",
       },
       {
@@ -100,66 +95,35 @@ export const MEGAMENU_TEMPLATES: NavItemType[] = [
       },
       {
         id: randomId(),
-        href: "/author/demo-slug" as Route,
+        href: "/posts/demo-slug" as Route,
         name: "Author page",
       },
     ],
   },
 
-  // others pages ----------------
-  {
-    id: randomId(),
-    href: "/#",
-    name: "Other Pages",
-    children: [
-      { id: randomId(), href: "/dashboard", name: "Dashboard" },
-      { id: randomId(), href: "/about", name: "About" },
-      { id: randomId(), href: "/contact", name: "Contact us" },
-      {
-        id: randomId(),
-        href: "/login",
-        name: "Login",
-      },
-      {
-        id: randomId(),
-        href: "/signup",
-        name: "Signup",
-      },
-      {
-        id: randomId(),
-        href: "/forgot-pass",
-        name: "Forgot password",
-      },
-      {
-        id: randomId(),
-        href: "/subscription",
-        name: "Subscription",
-      },
-    ],
-  },
 ];
 
 const OTHER_PAGE_CHILD: NavItemType[] = [
   // archive pages ----------------
   {
     id: randomId(),
-    href: "/archive/demo-slug" as Route,
+    href: "/category/demo-slug" as Route,
     name: "Category pages",
     type: "dropdown",
     children: [
       {
         id: randomId(),
-        href: "/archive/demo-slug" as Route,
+        href: "/category/demo-slug" as Route,
         name: "Category page 1",
       },
       {
         id: randomId(),
-        href: "/archive-2/demo-slug" as Route,
+        href: "/category/demo-slug" as Route,
         name: "Category page 2",
       },
       {
         id: randomId(),
-        href: "/archive-3/demo-slug" as Route,
+        href: "/category/demo-slug" as Route,
         name: "Category page 2",
       },
     ],
@@ -168,48 +132,48 @@ const OTHER_PAGE_CHILD: NavItemType[] = [
   // single pages ----------------
   {
     id: randomId(),
-    href: "/single/demo-slug" as Route,
+    href: "/posts/demo-slug" as Route,
     name: "Single pages",
     type: "dropdown",
     children: [
       {
         id: randomId(),
-        href: "/single/demo-slug" as Route,
+        href: "/posts/demo-slug" as Route,
         name: "Single 1",
       },
       {
         id: randomId(),
-        href: "/single-2/demo-slug" as Route,
+        href: "/posts/demo-slug" as Route,
         name: "Single 2",
       },
       {
         id: randomId(),
-        href: "/single-3/demo-slug" as Route,
+        href: "/posts/demo-slug" as Route,
         name: "Single 3",
       },
       {
         id: randomId(),
-        href: "/single-4/demo-slug" as Route,
+        href: "/posts/demo-slug" as Route,
         name: "Single 4",
       },
       {
         id: randomId(),
-        href: "/single-5/demo-slug" as Route,
+        href: "/posts/demo-slug" as Route,
         name: "Single 5",
       },
       {
         id: randomId(),
-        href: "/single-audio/demo-slug" as Route,
+        href: "/posts/demo-slug" as Route,
         name: "Single Audio",
       },
       {
         id: randomId(),
-        href: "/single-video/demo-slug" as Route,
+        href: "/posts/demo-slug" as Route,
         name: "Single Video",
       },
       {
         id: randomId(),
-        href: "/single-gallery/demo-slug" as Route,
+        href: "/posts/demo-slug" as Route,
         name: "Single Gallery",
       },
     ],
@@ -238,84 +202,10 @@ const OTHER_PAGE_CHILD: NavItemType[] = [
   // author pages ----------------
   {
     id: randomId(),
-    href: "/author/demo-slug" as Route,
+    href: "/posts/demo-slug" as Route,
     name: "Author page",
   },
 
-  // dashboard pages ----------------
-  {
-    id: randomId(),
-    href: "/dashboard",
-    name: "Dashboard Page",
-    type: "dropdown",
-    children: [
-      {
-        id: randomId(),
-        href: "/dashboard/edit-profile",
-        name: "Edit profile page",
-      },
-      {
-        id: randomId(),
-        href: "/dashboard/posts",
-        name: "Posts page",
-      },
-      {
-        id: randomId(),
-        href: "/dashboard/submit-post",
-        name: "Submit post page",
-      },
-      {
-        id: randomId(),
-        href: "/dashboard/subscription",
-        name: "Subscription",
-      },
-      {
-        id: randomId(),
-        href: "/dashboard/billing-address",
-        name: "Billing address",
-      },
-    ],
-  },
-
-  // about pages ----------------
-  {
-    id: randomId(),
-    href: "/about",
-    name: "Other Pages",
-    type: "dropdown",
-    children: [
-      {
-        id: randomId(),
-        href: "/about",
-        name: "About",
-      },
-      {
-        id: randomId(),
-        href: "/contact",
-        name: "Contact us",
-      },
-      {
-        id: randomId(),
-        href: "/login",
-        name: "Login",
-      },
-      {
-        id: randomId(),
-        href: "/signup",
-        name: "Signup",
-      },
-      {
-        id: randomId(),
-        href: "/forgot-pass",
-        name: "Forgot password",
-      },
-      {
-        id: randomId(),
-        href: "/subscription",
-        name: "Subscription",
-      },
-    ],
-  },
 ];
 
 export const NAVIGATION_DEMO_2: NavItemType[] = [
@@ -326,57 +216,51 @@ export const NAVIGATION_DEMO_2: NavItemType[] = [
     type: "dropdown",
     children: [
       { id: randomId(), href: "/", name: "Home page 1" },
-      { id: randomId(), href: "/home-2", name: "Home page 2" },
-      { id: randomId(), href: "/home-3", name: "Home page 3" },
-      { id: randomId(), href: "/home-4", name: "Home page 4" },
-      { id: randomId(), href: "/home-6", name: "Home page 5" },
       { id: randomId(), href: "/", name: "Header style 1", isNew: true },
-      { id: randomId(), href: "/home-2", name: "Header style 2", isNew: true },
-      { id: randomId(), href: "/home-3", name: "Header style 3" },
     ],
   },
 
   // single pages ----------------
   {
     id: randomId(),
-    href: "/single/demo-slug" as Route,
+    href: "/posts/demo-slug" as Route,
     name: "Singles",
     type: "dropdown",
     children: [
       {
         id: randomId(),
-        href: "/single/demo-slug" as Route,
+        href: "/posts/demo-slug" as Route,
         name: "Single page 1",
       },
       {
         id: randomId(),
-        href: "/single-2/demo-slug" as Route,
+        href: "/posts/demo-slug" as Route,
         name: "Single page 2",
       },
       {
         id: randomId(),
-        href: "/single-3/demo-slug" as Route,
+        href: "/posts/demo-slug" as Route,
         name: "Single page 3",
       },
       {
         id: randomId(),
-        href: "/single-4/demo-slug" as Route,
+        href: "/posts/demo-slug" as Route,
         name: "Single page 4",
       },
 
       {
         id: randomId(),
-        href: "/single-audio/demo-slug" as Route,
+        href: "/posts/demo-slug" as Route,
         name: "Single Audio",
       },
       {
         id: randomId(),
-        href: "/single-video/demo-slug" as Route,
+        href: "/posts/demo-slug" as Route,
         name: "Single Video",
       },
       {
         id: randomId(),
-        href: "/single-gallery/demo-slug" as Route,
+        href: "/posts/demo-slug" as Route,
         name: "Single Gallery",
         isNew: true,
       },
@@ -386,13 +270,13 @@ export const NAVIGATION_DEMO_2: NavItemType[] = [
   //
   {
     id: randomId(),
-    href: "/archive/demo-slug" as Route,
+    href: "/category/demo-slug" as Route,
     name: "Beauty",
   },
 
   {
     id: randomId(),
-    href: "/archive/demo-slug" as Route,
+    href: "/category/demo-slug" as Route,
     name: "Sport",
   },
   {

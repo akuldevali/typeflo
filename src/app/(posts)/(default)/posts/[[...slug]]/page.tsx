@@ -1,6 +1,5 @@
 import React from "react";
 import NcImage from "@/components/NcImage/NcImage";
-import SingleHeader from "@/app/(singles)/SingleHeader";
 import SubSingleHeader from "@/app/(posts)/SubSingleHeader";
 import supabaseClient from "@/utils/supabaseClient";
 import getAuthorSlugv2 from "@/utils/getAuthorSlugv2";

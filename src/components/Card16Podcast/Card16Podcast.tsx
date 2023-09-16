@@ -7,7 +7,7 @@ import CategoryBadgeList from "@/components/CategoryBadgeList/CategoryBadgeList"
 import PostCardLikeAndComment from "@/components/PostCardLikeAndComment/PostCardLikeAndComment";
 import musicWave from "@/images/musicWave.png";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import ButtonPlayMusicPlayer from "../ButtonPlayMusicPlayer";
 import { PauseIcon, PlayIcon } from "@heroicons/react/24/solid";
 
@@ -44,9 +44,9 @@ const Card16Podcast: FC<Card16PodcastProps> = ({
       <Link
         href={href}
         className={`block flex-shrink-0 relative w-full rounded-3xl overflow-hidden ${ratio}`}
-      >
+        legacyBehavior>
         <Image
-          fill
+          layout="fill"
           alt=""
           sizes="(max-width: 600px) 480px, 800px"
           src={featuredImage}
@@ -56,7 +56,7 @@ const Card16Podcast: FC<Card16PodcastProps> = ({
       </Link>
 
       {/* ABSOLUTE */}
-      <Link href={href} className="absolute inset-0"></Link>
+      <Link href={href} className="absolute inset-0" legacyBehavior></Link>
       <span className="absolute top-3 inset-x-3">
         <CategoryBadgeList categories={categories} />
       </span>
@@ -69,7 +69,8 @@ const Card16Podcast: FC<Card16PodcastProps> = ({
           }`}
         >
           <div className={`flex-grow `}>
-            <Image src={musicWave} alt="musicWave" />
+            <Image src={musicWave} alt="musicWave"
+              layout="fill" />
           </div>
           <ButtonPlayMusicPlayer
             post={post}
@@ -79,7 +80,7 @@ const Card16Podcast: FC<Card16PodcastProps> = ({
         </div>
         <div className="p-5 mt-5 bg-white dark:bg-neutral-900 shadow-xl dark:shadow-2xl rounded-3xl rounded-tl-none flex flex-col flex-grow ">
           <h2 className="nc-card-title block sm:text-lg lg:text-xl font-semibold text-neutral-900 dark:text-neutral-100 ">
-            <Link href={href} className="line-clamp-1" title={title}>
+            <Link href={href} className="line-clamp-1" title={title} legacyBehavior>
               {title}
             </Link>
           </h2>

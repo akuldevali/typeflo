@@ -57,7 +57,7 @@ const AccountActionDropdown: FC<AccountActionDropdownProps> = ({
   const hanldeClickDropDown = (item: typeof actions[number]) => {
     if (item.id === "copylink") {
       navigator.clipboard.writeText(
-        window.location.origin + "/author/this-is-slug"
+        window.location.origin + "/posts/this-is-slug"
       );
       setIsCopied(true);
       setTimeout(() => {

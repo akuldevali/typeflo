@@ -17,10 +17,10 @@ const SectionHero3: FC<SectionHero3Props> = ({ posts, className = "" }) => {
     return (
       <div className="aspect-h-8 aspect-w-8 sm:aspect-w-10 lg:aspect-w-16 ">
         <NcImage
+          layout="fill"
           alt=""
           containerClassName="absolute inset-0 rounded-[40px] overflow-hidden z-0"
           src={featuredImage}
-          fill
           sizes="(max-width: 1024px) 100vw, 1280px"
         />
         <span className="absolute inset-0 rounded-[40px] bg-black bg-opacity-50"></span>

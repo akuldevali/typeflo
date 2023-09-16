@@ -63,10 +63,10 @@ export default function AvatarDropdown() {
 
                     {/* ------------------ 1 --------------------- */}
                     <Link
-                      href={"/author/demo-slug"}
+                      href={"/posts/demo-slug"}
                       className="flex items-center p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                       onClick={() => close()}
-                    >
+                      legacyBehavior>
                       <div className="flex items-center justify-center flex-shrink-0 text-neutral-500 dark:text-neutral-300">
                         <svg
                           width="24"
@@ -98,10 +98,10 @@ export default function AvatarDropdown() {
 
                     {/* ------------------ 2 --------------------- */}
                     <Link
-                      href={"/dashboard/posts"}
+                      href={"/category/posts"}
                       className="flex items-center p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                       onClick={() => close()}
-                    >
+                      legacyBehavior>
                       <div className="flex items-center justify-center flex-shrink-0 text-neutral-500 dark:text-neutral-300">
                         <svg
                           width="24"
@@ -150,10 +150,10 @@ export default function AvatarDropdown() {
 
                     {/* ------------------ 2 --------------------- */}
                     <Link
-                      href={"/author/demo-slug"}
+                      href={"/posts/demo-slug"}
                       className="flex items-center p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                       onClick={() => close()}
-                    >
+                      legacyBehavior>
                       <div className="flex items-center justify-center flex-shrink-0 text-neutral-500 dark:text-neutral-300">
                         <svg
                           width="24"
@@ -223,7 +223,7 @@ export default function AvatarDropdown() {
                       href={"/"}
                       className="flex items-center p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                       onClick={() => close()}
-                    >
+                      legacyBehavior>
                       <div className="flex items-center justify-center flex-shrink-0 text-neutral-500 dark:text-neutral-300">
                         <svg
                           width="24"
@@ -286,7 +286,7 @@ export default function AvatarDropdown() {
                       href={"/#"}
                       className="flex items-center p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                       onClick={() => close()}
-                    >
+                      legacyBehavior>
                       <div className="flex items-center justify-center flex-shrink-0 text-neutral-500 dark:text-neutral-300">
                         <svg
                           width="24"

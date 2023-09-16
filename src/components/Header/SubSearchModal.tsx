@@ -8,7 +8,7 @@ import {
   FolderIcon,
   LifebuoyIcon,
 } from "@heroicons/react/24/outline";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { DEMO_AUTHORS } from "@/data/authors";
 import { DEMO_CATEGORIES } from "@/data/taxonomies";
 import { DEMO_POSTS } from "@/data/posts";
@@ -100,7 +100,7 @@ const SubSearchModal: FC<Props> = ({ renderTrigger }) => {
                 onKeyUp={(e) => {
                   e.preventDefault();
                   if (e.key === 'Enter') {
-                    router.push("/search?q=" + query);
+                    //router.push("/search?q=" + query);
                     setOpen(false);
                   }
                 }}

@@ -52,6 +52,7 @@ const SectionSubscribe2: FC<SectionSubscribe2Props> = ({ className = "" }) => {
       </div>
       <div className="flex-grow">
         <Image
+          layout="fill"
           alt="subsc"
           sizes="(max-width: 768px) 100vw, 50vw"
           src={rightImg}

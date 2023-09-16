@@ -34,7 +34,7 @@ const NavMobile: React.FC<NavMobileProps> = ({
                 pathname: i.href || undefined,
               }}
               className={`flex text-sm rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 mt-0.5 pr-4 ${itemClass}`}
-            >
+              legacyBehavior>
               <span
                 className={`py-2.5 ${!i.children ? "block w-full" : ""}`}
                 onClick={onClickClose}
@@ -84,7 +84,7 @@ const NavMobile: React.FC<NavMobileProps> = ({
           href={{
             pathname: item.href || undefined,
           }}
-        >
+          legacyBehavior>
           <span
             className={!item.children ? "block w-full" : ""}
             onClick={onClickClose}

@@ -95,11 +95,11 @@ const SectionVideos: FC<SectionVideosProps> = ({
                   <NcPlayIcon />
                 </div>
                 <Image
+                  layout="fill"
                   className="object-cover transition-transform group-hover:scale-105 duration-300"
                   src={video.thumbnail}
                   title={video.title}
                   alt={video.title}
-                  fill
                   sizes="(max-width: 600px) 480px, 800px"
                 />
               </Fragment>
@@ -136,10 +136,10 @@ const SectionVideos: FC<SectionVideosProps> = ({
           <NcPlayIcon2 />
         </div>
         <Image
+          layout="fill"
           sizes="(max-width: 600px) 480px, 800px"
           className="object-cover transition-transform group-hover:scale-110 duration-300"
           src={video.thumbnail}
-          fill
           title={video.title}
           alt={video.title}
         />

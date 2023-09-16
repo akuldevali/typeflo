@@ -26,11 +26,14 @@ const Card14: FC<Card14Props> = ({
     <div
       className={`nc-Card14 relative flex flex-col group rounded-3xl overflow-hidden ${hoverClass} ${className}`}
     >
-      <Link href={href} className={`flex items-start relative w-full ${ratio}`}>
+      <Link
+        href={href}
+        className={`flex items-start relative w-full ${ratio}`}
+        legacyBehavior>
         <NcImage
+          layout="fill"
           alt="post"
           containerClassName="absolute inset-0 overflow-hidden"
-          fill
           className="object-cover w-full h-full rounded-3xl"
           src={featuredImage}
         />
@@ -51,7 +54,7 @@ const Card14: FC<Card14Props> = ({
 
       <div className="dark absolute bottom-4 inset-x-4 sm:bottom-5 sm:inset-x-5 flex flex-col flex-grow">
         <h2 className="block text-base font-semibold text-white">
-          <Link href={href} className="line-clamp-2" title={title}>
+          <Link href={href} className="line-clamp-2" title={title} legacyBehavior>
             {title}
           </Link>
         </h2>
@@ -60,7 +63,7 @@ const Card14: FC<Card14Props> = ({
           <Link
             href={author.href}
             className="relative flex items-center space-x-2"
-          >
+            legacyBehavior>
             <Avatar
               radius="rounded-full"
               containerClassName="ring-2 ring-white"

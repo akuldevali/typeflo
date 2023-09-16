@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { TaxonomyType } from "@/data/types";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 export interface CardCategory3Props {
   className?: string;
@@ -14,13 +14,16 @@ const CardCategory3: FC<CardCategory3Props> = ({
 }) => {
   const { count, name, href = "/", thumbnail } = taxonomy;
   return (
-    <Link href={href} className={`nc-CardCategory3 flex flex-col ${className}`}>
+    <Link
+      href={href}
+      className={`nc-CardCategory3 flex flex-col ${className}`}
+      legacyBehavior>
       <div className="flex-shrink-0 relative w-full aspect-w-5 aspect-h-5 h-0 rounded-2xl overflow-hidden group">
         <Image
+          layout="fill"
           src={thumbnail || ""}
           className="object-cover w-full h-full rounded-2xl"
           sizes="(min-width: 1024px) 20rem, (min-width: 640px) 16rem, 12rem"
-          fill
           alt=""
         />
         <span className="opacity-0 group-hover:opacity-100 absolute inset-0 bg-black bg-opacity-10 transition-opacity"></span>

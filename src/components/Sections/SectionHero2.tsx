@@ -5,7 +5,7 @@ import ButtonPrimary from "@/components/Button/ButtonPrimary";
 import ButtonSecondary from "@/components/Button/ButtonSecondary";
 import NcModal from "@/components/NcModal/NcModal";
 import { PlayIcon } from "@heroicons/react/24/solid";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Button from "../Button/Button";
 
 export interface SectionHero2Props {}
@@ -39,7 +39,7 @@ const SectionHero2: FC<SectionHero2Props> = ({}) => {
       <div className="flex w-full mb-10 md:w-1/2 xl:w-3/5 md:absolute md:right-0 md:top-0 md:bottom-0 md:mb-0">
         <div className="hidden md:block absolute z-[1] top-0 left-0 bottom-0 w-44 from-black bg-gradient-to-r"></div>
         <Image
-          fill
+          layout="fill"
           className="object-cover"
           src="https://images.pexels.com/photos/4666750/pexels-photo-4666750.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
           sizes="1260px"

@@ -7,7 +7,7 @@ import MediaVideo from "./MediaVideo";
 import PostTypeFeaturedIcon from "@/components/PostTypeFeaturedIcon/PostTypeFeaturedIcon";
 import MediaAudio from "./MediaAudio";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 export interface PostFeaturedMediaProps {
   className?: string;
@@ -69,8 +69,8 @@ const PostFeaturedMedia: FC<PostFeaturedMediaProps> = ({
     <div className={`nc-PostFeaturedMedia relative ${className}`}>
       {postType !== "gallery" && (
         <Image
+          layout="fill"
           alt="featured"
-          fill
           className="object-cover"
           src={featuredImage}
           sizes="(max-width: 600px) 480px, 800px"

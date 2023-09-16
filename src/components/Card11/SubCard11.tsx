@@ -5,7 +5,7 @@ import PostCardSaveAction from "@/components/PostCardSaveAction/PostCardSaveActi
 import SubCategoryBadgeList from "@/components/CategoryBadgeList/SubCategoryBadgeList";
 import PostCardLikeAndComment from "@/components/PostCardLikeAndComment/PostCardLikeAndComment";
 import PostCardMeta from "@/components/PostCardMeta/PostCardMeta";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import { useReadingTime } from "react-hook-reading-time";
 
@@ -55,7 +55,7 @@ const SubCard11: FC<Card11Props> = ({
         <div>
           <div>
             <Image
-              fill
+              layout="fill"
               className="object-cover rounded-3xl"
               src={featured_imghd}
               alt={title}
@@ -63,7 +63,7 @@ const SubCard11: FC<Card11Props> = ({
           </div>
         </div>
       </div>
-      <Link href={href} className="absolute inset-0"></Link>
+      <Link href={href} className="absolute inset-0" legacyBehavior><div></div></Link>
       {
         badge && <div className="absolute top-3 inset-x-3 z-10">
           <SubCategoryBadgeList categories={category} />

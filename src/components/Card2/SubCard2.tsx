@@ -10,7 +10,7 @@ import SubCardAuthor2 from "@/components/CardAuthor2/SubCardAuthor2";
 import SubCategoryBadgeList from "@/components/CategoryBadgeList/SubCategoryBadgeList";
 import PostTypeFeaturedIcon from "@/components/PostTypeFeaturedIcon/PostTypeFeaturedIcon";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import PostCardMeta from "../PostCardMeta/PostCardMeta";
 
 export interface Card2Props {
@@ -34,14 +34,14 @@ const SubCard2: FC<Card2Props> = ({
     data-nc-id="Card2">
       <span className="block flex-shrink-0 flex-grow relative w-full h-0 pt-[75%] sm:pt-[55%] rounded-xl sm:rounded-b-none overflow-hidden">
         <Image
-          fill
+          layout="fill"
           className="object-cover rounded-3xl"
           src={featured_imghd}
           alt={title}
         />
       </span>
 
-      <Link href={href} className="absolute inset-0" />
+      <Link href={href} className="absolute inset-0" legacyBehavior><></></Link>
 
       <div className="p-4 sm:p-5 flex flex-col">
         <div className="space-y-3">
@@ -53,7 +53,7 @@ const SubCard2: FC<Card2Props> = ({
               size === "large" ? "text-lg sm:text-2xl" : "text-base"
             }`}
           >
-            <Link href={href} className="line-clamp-2" title={title}>
+            <Link href={href} className="line-clamp-2" title={title} legacyBehavior>
               {title}
             </Link>
           </h2>

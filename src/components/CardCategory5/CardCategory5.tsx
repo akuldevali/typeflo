@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { TaxonomyType, TwMainColor } from "@/data/types";
 import Badge from "@/components/Badge/Badge";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 
 export interface CardCategory5Props {
@@ -20,12 +20,12 @@ const CardCategory5: FC<CardCategory5Props> = ({
     <Link
       href={href}
       className={`nc-CardCategory5 relative block group ${className}`}
-    >
+      legacyBehavior>
       <div
         className={`flex-shrink-0 relative w-full aspect-w-8 aspect-h-5 h-0 rounded-3xl overflow-hidden z-0 group`}
       >
         <Image
-          fill
+          layout="fill"
           alt="thumbnail"
           src={thumbnail || ""}
           className="object-cover w-full h-full rounded-2xl"

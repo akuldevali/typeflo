@@ -11,7 +11,7 @@ export interface SingleAuthorProps {
 const SingleAuthor: FC<SingleAuthorProps> = ({ author = DEMO_AUTHORS[1] }) => {
   return (
     <div className="nc-SingleAuthor flex">
-      <Link href={author.href}>
+      <Link href={author.href} legacyBehavior>
         <Avatar
           imgUrl={author.avatar}
           userName={author.displayName}
@@ -23,7 +23,7 @@ const SingleAuthor: FC<SingleAuthorProps> = ({ author = DEMO_AUTHORS[1] }) => {
           WRITTEN BY
         </span>
         <h2 className="text-lg font-semibold text-neutral-900 dark:text-neutral-200">
-          <Link href={author.href}>{author.displayName}</Link>
+          <Link href={author.href} legacyBehavior>{author.displayName}</Link>
         </h2>
         <span className="block mt-1 text-sm text-neutral-500 sm:text-base dark:text-neutral-300">
           {author.desc}

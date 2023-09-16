@@ -69,7 +69,7 @@ const PostActionDropdown: FC<PostActionDropdownProps> = ({
   const hanldeClickDropDown = (item: typeof actions[number]) => {
     if (item.id === "copylink") {
       navigator.clipboard.writeText(
-        window.location.origin + "/single/this-is-slug"
+        window.location.origin + "/posts/this-is-slug"
       );
       setIsCopied(true);
       setTimeout(() => {

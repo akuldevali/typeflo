@@ -19,12 +19,12 @@ const Card12: FC<Card12Props> = ({ className = "h-full", post }) => {
       <Link
         href={href}
         className="block flex-shrink-0 flex-grow relative w-full h-0 aspect-w-4 aspect-h-3 rounded-3xl overflow-hidden"
-      >
+        legacyBehavior>
         <NcImage
+          layout="fill"
           containerClassName="absolute inset-0"
           src={featuredImage}
           alt={title}
-          fill
         />
         <span>
           <PostTypeFeaturedIcon
@@ -42,7 +42,7 @@ const Card12: FC<Card12Props> = ({ className = "h-full", post }) => {
         <h2
           className={`nc-card-title block font-semibold text-neutral-900 dark:text-neutral-100 transition-colors sm:text-lg lg:text-2xl`}
         >
-          <Link href={href} className="line-clamp-2" title={title}>
+          <Link href={href} className="line-clamp-2" title={title} legacyBehavior>
             {title}
           </Link>
         </h2>

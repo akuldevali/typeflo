@@ -30,7 +30,7 @@ const MainNav1: FC<MainNav1Props> = ({}) => {
               <div className="px-1"></div>
               <Button
                 sizeClass="py-3 px-4 sm:px-6"
-                href="/login"
+                href="/"
                 pattern="primary"
               >
                 Sign up

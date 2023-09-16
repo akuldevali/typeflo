@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import rightImgDemo from "@/images/BecomeAnAuthorImg.png";
 import ButtonPrimary from "@/components/Button/ButtonPrimary";
-import Image, { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/legacy/image";
 
 export interface SectionBecomeAnAuthorProps {
   className?: string;
@@ -32,6 +32,7 @@ const SectionBecomeAnAuthor: FC<SectionBecomeAnAuthorProps> = ({
       </div>
       <div className="flex-grow">
         <Image
+          layout="fill"
           alt="hero"
           sizes="(max-width: 768px) 100vw, 50vw"
           src={rightImg}

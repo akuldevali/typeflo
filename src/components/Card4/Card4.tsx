@@ -3,7 +3,7 @@ import PostCardSaveAction from "@/components/PostCardSaveAction/PostCardSaveActi
 import { PostDataType } from "@/data/types";
 import CardAuthor2 from "@/components/CardAuthor2/CardAuthor2";
 import CategoryBadgeList from "@/components/CategoryBadgeList/CategoryBadgeList";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 
 export interface Card4Props {
@@ -21,7 +21,7 @@ const Card4: FC<Card4Props> = ({ className = "h-full", post }) => {
     >
       <span className="block flex-shrink-0 relative w-full aspect-w-16 aspect-h-9 rounded-t-xl overflow-hidden">
         <Image
-          fill
+          layout="fill"
           className="object-cover"
           alt=""
           sizes="(max-width: 600px) 480px, 800px"
@@ -29,13 +29,13 @@ const Card4: FC<Card4Props> = ({ className = "h-full", post }) => {
         />
       </span>
 
-      <Link href={href} className="absolute inset-0"></Link>
+      <Link href={href} className="absolute inset-0" legacyBehavior></Link>
 
       <div className="p-4 flex flex-col flex-grow">
         <div className="space-y-2.5 mb-4">
           <CategoryBadgeList categories={categories} />
           <h2 className="nc-card-title block text-base font-semibold text-neutral-900 dark:text-neutral-100 ">
-            <Link href={href} className="line-clamp-2" title={title}>
+            <Link href={href} className="line-clamp-2" title={title} legacyBehavior>
               {title}
             </Link>
           </h2>

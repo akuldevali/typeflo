@@ -66,7 +66,7 @@ const Badge: FC<BadgeProps> = ({
     <Link
       href={href || "/"}
       className={`transition-colors hover:text-white duration-300 ${CLASSES} ${getColorClass()}`}
-    >
+      legacyBehavior>
       {name}
     </Link>
   ) : (

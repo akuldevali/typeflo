@@ -34,7 +34,7 @@ const CardLarge1: FC<CardLarge1Props> = ({
           <CategoryBadgeList categories={categories} />
 
           <h2 className="nc-card-title text-base sm:text-xl lg:text-2xl font-semibold ">
-            <Link href={href} className="line-clamp-2" title={title}>
+            <Link href={href} className="line-clamp-2" title={title} legacyBehavior>
               {title}
             </Link>
           </h2>
@@ -55,13 +55,16 @@ const CardLarge1: FC<CardLarge1Props> = ({
         </div>
       </div>
       <div className="w-full md:w-4/5 lg:w-2/3">
-        <Link href={href} className="nc-CardLarge1__right block relative">
+        <Link
+          href={href}
+          className="nc-CardLarge1__right block relative"
+          legacyBehavior>
           <NcImage
+            layout="fill"
             containerClassName="aspect-w-16 aspect-h-12 sm:aspect-h-9 md:aspect-h-14 lg:aspect-h-10 2xl:aspect-h-9 relative"
             className="absolute inset-0 object-cover rounded-3xl"
             src={featuredImage}
             alt={title}
-            fill
             sizes="(max-width: 768px) 100vw, 50vw"
           />
           {/* META TYPE */}

@@ -42,7 +42,7 @@ const SubCard3: FC<Card3Props> = ({
         <SubCategoryBadgeList
             categories={category}
         />
-          <Link href={href} className="block">
+          <Link href={href} className="block" legacyBehavior>
             <h2
               className={`nc-card-title block font-medium sm:font-semibold text-neutral-900 dark:text-neutral-100 text-sm sm:text-base xl:text-lg`}
             >
@@ -65,11 +65,11 @@ const SubCard3: FC<Card3Props> = ({
         <Link
           href={href}
           className="block w-full h-0 aspect-h-1 aspect-w-1 relative"
-        >
+          legacyBehavior>
           <NcImage
+            layout="fill"
             containerClassName="absolute inset-0"
             src={featured_imghd}
-            fill
             alt={title}
           />
           
