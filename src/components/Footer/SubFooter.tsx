@@ -51,16 +51,18 @@ const SubFooter: React.FC<SubFooterProps> = ({ authors, menus }) => {
                     <div className="text-center lg:hidden md:hidden">
                       <div className="flex-col text-center md:flex lg:flex">
                           {navigationFooter.map((item:any, index:any) => (
-                              <Link
-                                  key={index}
+                              <div key={index} className={`w-full text-center lg:flex items-center py-2.5 px-2.5 rounded-xl font-light text-md hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg`}>
+                                <Link
                                   target="_blank"
                                   className={`w-full text-center lg:flex items-center py-2.5 px-2.5 rounded-xl font-light text-md hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg`}
                                   href={item.link}
                                   legacyBehavior>
-                                <p className={`text-neutral-900 dark:text-white`}>
-                                    {item.name}
-                                </p>
-                              </Link>
+                                  <p className={`text-neutral-900 dark:text-white`}>
+                                      {item.name}
+                                  </p>
+                                </Link>
+
+                              </div>
                           ))}
                       </div>
                     </div>

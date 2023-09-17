@@ -28,7 +28,7 @@ const fetchPosts = async (domain1: string, domain2: string) => {
   var posts:any = await supabaseClient
   .from("posts")
   .select(
-    "id, posttitle, title, featured_imghd, featured_imgsd, docsid, href, excerpt, metatitle, metadescription, created_at, postClamp, reading_time, authors!inner(id, title, description, newslettermode, newsletterC, posts, users!users(*)), category!inner(*), refauthors!inner(id, name, avatar)",
+    "id, posttitle, title, featured_imgsd, docsid, href, excerpt, metatitle, metadescription, created_at, postClamp, reading_time, authors!inner(id, title, description, newslettermode, newsletterC, posts, users!users(*)), category!inner(*), refauthors!inner(id, name, avatar)",
   )
   .eq("authors.username", domain1)
   .eq("authors.cus_domain", domain2)
@@ -94,11 +94,11 @@ export async function generateMetadata(): Promise<Metadata> {
   }
   return {
     title: data[0].metatitle,
-    description:  data[0].metadescription,
+    description: data[0].metadescription,
     keywords: data[0].title + ' ' + data[0].metatitle + ' ' + data[0].metadescription,
     icons: {
       icon: {
-        url: data[0].faviconimg ? data[0].faviconimg : "/favicon.png",
+        url: data[0].faviconimg ? data[0].faviconimg : "./favicon.png",
         type: "image/png",
       },
     }

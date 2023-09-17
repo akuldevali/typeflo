@@ -84,7 +84,7 @@ const SectionArticles: FC<SectionArticlesProps> = ({
 
     const {data,error} = await supabaseClient
       .from('posts')
-      .select('id, title, created_at, featured_imghd, href, postClamp, reading_time, authors!inner(*), category!inner(*)')
+      .select('id, title, created_at, featured_imgsd, href, postClamp, reading_time, authors!inner(*), category!inner(*)')
       .eq('authors.username', domain1)
       .eq('authors.cus_domain', domain2)
       .range(inPage, fnPage)
@@ -126,7 +126,7 @@ const SectionArticles: FC<SectionArticlesProps> = ({
     
     const {data,error} = await supabaseClient
       .from('posts')
-      .select('id, title, created_at, featured_imghd, href, postClamp, reading_time, authors!inner(*), category!inner(*)')
+      .select('id, title, created_at, featured_imgsd, href, postClamp, reading_time, authors!inner(*), category!inner(*)')
       .eq('authors.username', domain1)
       .eq('authors.cus_domain', domain2)
       .eq('category.id', catId)

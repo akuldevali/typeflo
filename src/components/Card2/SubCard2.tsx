@@ -24,7 +24,7 @@ const SubCard2: FC<Card2Props> = ({
   size = "normal",
   posts,
 }) => {
-  const { title, featured_imghd, href, created_at, category, authors, refauthors, excerpt, postClamp } = posts;
+  const { title, featured_imgsd, href, created_at, category, authors, refauthors, excerpt, postClamp } = posts;
   const [date, setDate] = useState(new Date(created_at).toLocaleString('en-us',{month:'short', day:'numeric', year:'numeric'}));
 
   const postContent = excerpt ? excerpt : postClamp;
@@ -36,8 +36,9 @@ const SubCard2: FC<Card2Props> = ({
         <span className="block cursor-pointer flex-shrink-0 flex-grow relative w-full h-0 pt-[75%] sm:pt-[55%] rounded-xl sm:rounded-b-none overflow-hidden">
           <Image
             fill
+            priority
             className="object-cover rounded-3xl"
-            src={featured_imghd}
+            src={featured_imgsd}
             alt={title}
           />
         </span>

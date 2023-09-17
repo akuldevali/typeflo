@@ -126,9 +126,9 @@ export default async function RootLayout({
   // const themeColour = authorData ? authorData[0]["theme_colour"] : "";
 
   return (
-    <html lang="en" className={` ${poppins.className}`} suppressContentEditableWarning={true} >
+    <html lang="en" className={` ${poppins.className}`} suppressHydrationWarning={true} >
       {/* {headerScripts} */}
-      <body className={` bg-[#f8f8f8] text-base dark:bg-neutral-900/95 text-neutral-900 dark:text-neutral-200`}>
+      <body suppressHydrationWarning={true} className={` bg-[#f8f8f8] text-base dark:bg-neutral-900/95 text-neutral-900 dark:text-neutral-200`}>
         <SubHeader2 
           domain1={domain1}
           domain2={domain2}
