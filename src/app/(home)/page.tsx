@@ -121,7 +121,7 @@ const PageHome = async (props: any) => {
 
   return (
     <div className="nc-PageHome relative overflow-x-hidden bg-white dark:bg-slate-800">
-      <div className="container relative">
+      <div className="container relative" suppressHydrationWarning>
         <SectionLargeSlider
           className="pt-10 pb-16 md:py-16 lg:pb-28 lg:pt-20"
           heading={author[0].title}
