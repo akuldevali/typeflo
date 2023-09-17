@@ -63,12 +63,13 @@ const Badge: FC<BadgeProps> = ({
     "nc-Badge  inline-flex px-2.5 py-1 rounded-full font-medium text-xs " +
     className;
   return !!href ? (
-    <Link
-      href={href || "/"}
-      className={`transition-colors hover:text-white duration-300 ${CLASSES} ${getColorClass()}`}
-      legacyBehavior>
-      {name}
-    </Link>
+    <div className={`transition-colors hover:text-white duration-300 ${CLASSES} ${getColorClass()}`}>
+      <Link
+        href={href || "/"}
+        legacyBehavior>
+        {name}
+      </Link>
+    </div>
   ) : (
     <span className={`${CLASSES} ${getColorClass(false)} `}>{name}</span>
   );

@@ -23,7 +23,7 @@ const SubCard3: FC<Card3Props> = ({
     size="normal",
     posts,
  }) => {
-    const { title, featured_imghd, href, created_at, category, excerpt, postClamp } = posts;
+    const { title, featured_imgsd, href, created_at, category, excerpt, postClamp } = posts;
     const [date, setDate] = useState<any>(null);
   
     useEffect(() => {
@@ -69,7 +69,7 @@ const SubCard3: FC<Card3Props> = ({
           <NcImage
             layout="fill"
             containerClassName="absolute inset-0"
-            src={featured_imghd}
+            src={featured_imgsd}
             alt={title}
           />
           

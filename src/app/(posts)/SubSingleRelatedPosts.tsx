@@ -34,7 +34,7 @@ const SubSingleRelatedPosts:FC<SubSingleRelatedPostsProps> = ({ category, type, 
             await supabaseClient
             .from('posts')
             .select(
-              "id, posttitle, title, featured_imghd, featured_imgsd, docsid, href, excerpt, metatitle, metadescription, created_at, postClamp, reading_time, authors!inner(*, custom_code!custom_code(*), users!users(*)), category!inner(*), refauthors!inner(*)",
+              "id, posttitle, title, featured_imgsd, docsid, href, excerpt, metatitle, metadescription, created_at, postClamp, reading_time, authors!inner(*, custom_code!custom_code(*), users!users(*)), category!inner(*), refauthors!inner(*)",
             )
             .eq('authors.username', domain1)
             .eq('authors.cus_domain', domain2)
@@ -44,7 +44,7 @@ const SubSingleRelatedPosts:FC<SubSingleRelatedPostsProps> = ({ category, type, 
             await supabaseClient
             .from('posts')
             .select(
-              "id, posttitle, title, featured_imghd, featured_imgsd, docsid, href, excerpt, metatitle, metadescription, created_at, postClamp, reading_time, authors!inner(*, custom_code!custom_code(*), users!users(*)), category!inner(*), refauthors!inner(*)",
+              "id, posttitle, title, featured_imgsd, docsid, href, excerpt, metatitle, metadescription, created_at, postClamp, reading_time, authors!inner(*, custom_code!custom_code(*), users!users(*)), category!inner(*), refauthors!inner(*)",
             )
             .eq('refauthors.id', domain1)
             .eq('category.id', category)
@@ -55,7 +55,7 @@ const SubSingleRelatedPosts:FC<SubSingleRelatedPostsProps> = ({ category, type, 
             await supabaseClient
             .from('posts')
             .select(
-              "id, posttitle, title, featured_imghd, featured_imgsd, docsid, href, excerpt, metatitle, metadescription, created_at, postClamp, reading_time, authors!inner(*, custom_code!custom_code(*), users!users(*)), category!inner(*), refauthors!inner(*)",
+              "id, posttitle, title, featured_imgsd, docsid, href, excerpt, metatitle, metadescription, created_at, postClamp, reading_time, authors!inner(*, custom_code!custom_code(*), users!users(*)), category!inner(*), refauthors!inner(*)",
             )
             .eq('authors.username', domain1)
             .eq('authors.cus_domain', domain2)
@@ -66,7 +66,7 @@ const SubSingleRelatedPosts:FC<SubSingleRelatedPostsProps> = ({ category, type, 
             await supabaseClient
             .from('posts')
             .select(
-              "id, posttitle, title, featured_imghd, featured_imgsd, docsid, href, excerpt, metatitle, metadescription, created_at, postClamp, reading_time, authors!inner(*, custom_code!custom_code(*), users!users(*)), category!inner(*), refauthors!inner(*)",
+              "id, posttitle, title, featured_imgsd, docsid, href, excerpt, metatitle, metadescription, created_at, postClamp, reading_time, authors!inner(*, custom_code!custom_code(*), users!users(*)), category!inner(*), refauthors!inner(*)",
             )
             .eq('refauthors.id', domain1)
             .neq('posttitle', postTitle)
@@ -134,7 +134,7 @@ const SubSingleRelatedPosts:FC<SubSingleRelatedPostsProps> = ({ category, type, 
 
         {/* MORE FROM AUTHOR */}
         {
-            autPosts.length > 0 && <div className="mt-20">
+            autPosts.length > 0 && <div className="mt-10">
               <Heading
                 className="mb-10 text-neutral-900 dark:text-neutral-50"
                 desc=""

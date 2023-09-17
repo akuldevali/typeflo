@@ -5,7 +5,7 @@ import PostCardSaveAction from "@/components/PostCardSaveAction/PostCardSaveActi
 import SubCategoryBadgeList from "@/components/CategoryBadgeList/SubCategoryBadgeList";
 import PostCardLikeAndComment from "@/components/PostCardLikeAndComment/PostCardLikeAndComment";
 import PostCardMeta from "@/components/PostCardMeta/PostCardMeta";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from "next/link";
 import { useReadingTime } from "react-hook-reading-time";
 
@@ -28,7 +28,7 @@ const SubCard11: FC<Card11Props> = ({
   postTextShow = true,
   onClick,
 }) => {
-  const { title, featured_imghd, href, created_at, category, excerpt, postClamp, reading_time } = post;
+  const { title, featured_imgsd, href, created_at, category, excerpt, postClamp, reading_time } = post;
   const [date, setDate] = useState<any>(null);
 
   useEffect(() => {
@@ -50,20 +50,19 @@ const SubCard11: FC<Card11Props> = ({
       onClick={onClick}
     >
       <div
-        className={`block flex-shrink-0 relative w-full rounded-t-xl overflow-hidden ${ratio}`}
+        className={`block flex-shrink-0 relative w-full rounded-t-xl cursor-pointer overflow-hidden ${ratio}`}
       >
-        <div>
+        <Link href={href} legacyBehavior>
           <div>
             <Image
-              layout="fill"
+              fill
               className="object-cover rounded-3xl"
-              src={featured_imghd}
+              src={featured_imgsd}
               alt={title}
             />
           </div>
-        </div>
+        </Link>
       </div>
-      <Link href={href} className="absolute inset-0" legacyBehavior><div></div></Link>
       {
         badge && <div className="absolute top-3 inset-x-3 z-10">
           <SubCategoryBadgeList categories={category} />
@@ -83,9 +82,11 @@ const SubCard11: FC<Card11Props> = ({
               </>
             }
           </div>
-          <h2 className="nc-card-title block text-[18px] text-base font-semibold text-neutral-900 dark:text-neutral-100 ">
-            {title}
-          </h2>
+          <Link href={href} legacyBehavior>
+            <h2 className="nc-card-title cursor-pointer block text-[18px] text-base font-semibold text-neutral-900 dark:text-neutral-100 ">
+              {title}
+            </h2>
+          </Link>
           {
             postTextShow && <span className="text-[13px] line-clamp-2">{postText}</span>
           }

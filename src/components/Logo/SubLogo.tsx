@@ -1,7 +1,4 @@
 import React from "react";
-import logoImg from "@/images/logo.png";
-import logoLightImg from "@/images/logo-light.png";
-import LogoSvg from "./LogoSvg";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -11,19 +8,20 @@ export interface LogoProps {
 }
 
 const SubLogo: React.FC<LogoProps> = ({
-  img = logoImg,
+  img,
   title,
 }) => {
   return (
-    <Link
-      href="/"
-      className="ttnc-logo inline-block text-primary-6000"
-      legacyBehavior>
-      {/* THIS USE FOR MY MULTI DEMO */}
-      {/* IF YOU ARE MY CLIENT. PLESE DELETE THIS CODE AND YOU YOUR IMAGE PNG BY BELLOW CODE */}
-      
-      <img className="mx-auto object-contain h-12 md:h-10 lg:h-10 text-neutral-400" alt={title} src={`${img}`} />
-    </Link>
+    <div className="ttnc-logo inline-block text-primary-6000 cursor-pointer">
+      <Link
+        href="/"
+        legacyBehavior>
+        {/* THIS USE FOR MY MULTI DEMO */}
+        {/* IF YOU ARE MY CLIENT. PLESE DELETE THIS CODE AND YOU YOUR IMAGE PNG BY BELLOW CODE */}
+        
+        <Image width={100} height={150} className="object-contain h-12 md:h-10 lg:h-10 text-neutral-400" alt={title} src={`${img}`} />
+      </Link>
+    </div>
   );
 };
 

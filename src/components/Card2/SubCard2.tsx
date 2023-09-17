@@ -10,7 +10,7 @@ import SubCardAuthor2 from "@/components/CardAuthor2/SubCardAuthor2";
 import SubCategoryBadgeList from "@/components/CategoryBadgeList/SubCategoryBadgeList";
 import PostTypeFeaturedIcon from "@/components/PostTypeFeaturedIcon/PostTypeFeaturedIcon";
 import Link from "next/link";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import PostCardMeta from "../PostCardMeta/PostCardMeta";
 
 export interface Card2Props {
@@ -24,7 +24,7 @@ const SubCard2: FC<Card2Props> = ({
   size = "normal",
   posts,
 }) => {
-  const { title, featured_imghd, href, created_at, category, authors, refauthors, excerpt, postClamp } = posts;
+  const { title, featured_imgsd, href, created_at, category, authors, refauthors, excerpt, postClamp } = posts;
   const [date, setDate] = useState(new Date(created_at).toLocaleString('en-us',{month:'short', day:'numeric', year:'numeric'}));
 
   const postContent = excerpt ? excerpt : postClamp;
@@ -32,16 +32,17 @@ const SubCard2: FC<Card2Props> = ({
   return (
     <div className={`nc-Card2 group relative flex flex-col  [ nc-box-has-hover ] [ nc-dark-box-bg-has-hover ] overflow-hidden ${className}`}
     data-nc-id="Card2">
-      <span className="block flex-shrink-0 flex-grow relative w-full h-0 pt-[75%] sm:pt-[55%] rounded-xl sm:rounded-b-none overflow-hidden">
-        <Image
-          layout="fill"
-          className="object-cover rounded-3xl"
-          src={featured_imghd}
-          alt={title}
-        />
-      </span>
-
-      <Link href={href} className="absolute inset-0" legacyBehavior><></></Link>
+      <Link href={href} className="absolute inset-0" legacyBehavior>
+        <span className="block cursor-pointer flex-shrink-0 flex-grow relative w-full h-0 pt-[75%] sm:pt-[55%] rounded-xl sm:rounded-b-none overflow-hidden">
+          <Image
+            fill
+            priority
+            className="object-cover rounded-3xl"
+            src={featured_imgsd}
+            alt={title}
+          />
+        </span>
+      </Link>
 
       <div className="p-4 sm:p-5 flex flex-col">
         <div className="space-y-3">

@@ -24,7 +24,6 @@ const SubSingleHeader: FC<SingleHeaderProps> = ({
   postData,
   className = "",
 }) => {
-  console.log(postData);
 
   const { title, category, created_at, authors, reading_time, refauthors, href, excerpt } = postData[0];
 

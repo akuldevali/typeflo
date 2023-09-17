@@ -1,8 +1,6 @@
 "use client";
 import React, { useState, Fragment, useEffect } from "react";
 import { Transition, Popover } from "@/app/headlessui";
-import NavMobile from "@/components/Navigation/NavMobile";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { renderLogo } from "@/components/Header/SubMainNav1";
@@ -22,10 +20,9 @@ export interface MenuBarProps {
 
 export const renderMainItem = (item: any, index: any, className?: string) => {
   return (
-    <li key={index} className={`text-neutral-900 dark:text-white ${className}`}>
+    <li key={index} className={`text-neutral-900 dark:text-white w-full items-center py-2.5 px-2.5 rounded-xl font-light text-md hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg ${className}`}>
       <Link
         target="_blank"
-        className={`flex w-full items-center py-2.5 px-2.5 rounded-xl font-light text-md hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg`}
         href={item.link}
         legacyBehavior>
           {item.name}
@@ -68,18 +65,16 @@ const SubMenuBar: React.FC<MenuBarProps> = ({ navigations, socials, authors, but
             </div>
           </div>
           <div className="space-y-6 pb-6 px-5">
-            
             <div className="flex justify-between items-center">
               <SubSocialsList socials={socials} itemClass="w-9 h-9 flex items-center justify-center rounded-full bg-neutral-100 text-xl dark:bg-neutral-800 dark:text-neutral-300" />
               <SwitchDarkMode />
             </div>
             {
               buttons.length != 0 && (
-                <div>
+                <div className="flex w-full cursor-pointer items-center justify-center rounded-3xl border border-transparent bg-primary-700 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-primary-500">
                   <Link
                     href={buttons[0].link}
                     target="_blank"
-                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                     legacyBehavior>
                     {buttons[0].name}
                   </Link>

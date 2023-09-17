@@ -44,9 +44,11 @@ export const renderLogo = (author: any, darkmodeState: boolean) => {
   
     if(author[0].logoimg == null) { 
       return (
-        <Link href="/" className="ttnc-logo inline-block" legacyBehavior>
-          <h2 className={`text-2xl md:text-2xl font-semibold`}>{author[0].metatitle.toUpperCase()}</h2>
-        </Link>
+        <div className="ttnc-logo inline-block">
+          <Link href="/" legacyBehavior>
+            <h2 className={`text-2xl md:text-2xl font-semibold`}>{author[0].metatitle.toUpperCase()}</h2>
+          </Link> 
+        </div>
       );
     }else {
       if(darkmodeState === false) { 
@@ -93,18 +95,20 @@ const SubMainNav1: FC<MainNav1Props> = ({ domain1, domain2, author, nav }) => {
           </div>
 
           <div className="flex-1 flex items-center justify-end text-neutral-700 dark:text-neutral-100 space-x-1">
-            <div className="hidden items-center lg:flex">
+            <div className="hidden items-center lg:flex gap-2">
               {renderDarkMode(author[0].darkmode, darkmodeState)}
               <SearchModal domain1={domain1} domain2={domain2} />
               <div className="px-1"></div>
               {
                 buttons.length != 0 && (
-                  <Link href={buttons[0].link} target="_blank" legacyBehavior>
-                    <div
-                    >
-                      {buttons[0].name}
-                    </div>
-                  </Link>)
+                  <div className="flex w-full cursor-pointer items-center justify-center rounded-3xl border border-transparent bg-primary-700 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-primary-500">
+                    <Link href={buttons[0].link} target="_blank" legacyBehavior>
+                      <div>
+                        {buttons[0].name}
+                      </div>
+                    </Link>
+                  </div>
+                )
               }
             </div>
             <div className="flex items-center lg:hidden">
