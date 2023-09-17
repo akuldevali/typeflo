@@ -3,7 +3,6 @@ const nextConfig = {
   experimental: {
     appDir: true,
     typedRoutes: true,
-    swcMinify: true,
   },
   reactStrictMode: false,
   images: {

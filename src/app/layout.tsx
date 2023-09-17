@@ -7,8 +7,6 @@ import { supabaseFetchMultipleEq } from "@/utils/functions";
 import sanitizeHtml from 'sanitize-html';
 import SubFooter from "@/components/Footer/SubFooter";
 import SubHeader2 from "@/components/Header/SubHeader2";
-
-//import sanitizeHtml from 'sanitize-html';
 import Script from "next/script";
 
 const poppins = Poppins({
