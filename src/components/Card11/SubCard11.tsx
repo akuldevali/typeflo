@@ -28,7 +28,7 @@ const SubCard11: FC<Card11Props> = ({
   postTextShow = true,
   onClick,
 }) => {
-  const { title, featured_imgsd, href, created_at, category, excerpt, postClamp, reading_time } = post;
+  const { title, featured_imghd, href, created_at, category, excerpt, postClamp, reading_time } = post;
   const [date, setDate] = useState<any>(null);
 
   useEffect(() => {
@@ -57,7 +57,7 @@ const SubCard11: FC<Card11Props> = ({
             <Image
               fill
               className="object-cover rounded-3xl"
-              src={featured_imgsd}
+              src={featured_imghd}
               alt={title}
             />
           </div>

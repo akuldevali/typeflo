@@ -25,7 +25,7 @@ const SubCardLarge1: FC<CardLarge1Props> = ({
   onClickNext = () => {},
   onClickPrev = () => {},
 }) => {
-  const { title, featured_imgsd, href, created_at, category, post, authors, refauthors } = posts;
+  const { title, featured_imghd, href, created_at, category, post, authors, refauthors } = posts;
  
   const [date, setDate] = useState<any>(null);
 
@@ -47,7 +47,7 @@ const SubCardLarge1: FC<CardLarge1Props> = ({
             layout="fill"
             containerClassName="aspect-w-16 aspect-h-12 sm:aspect-h-9 md:aspect-h-14 lg:aspect-h-10 2xl:aspect-h-9 relative"
             className="absolute inset-0 object-cover rounded-3xl"
-            src={featured_imgsd}
+            src={featured_imghd}
             alt={title}
             sizes="(max-width: 768px) 100vw, 50vw"
           />
