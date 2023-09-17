@@ -115,19 +115,19 @@ export default async function RootLayout({
 
   // const { errors, author, nav } = userData;
   
-  var headerScripts = authorData && authorData[0]["custom_code"] ? 
-  injectScriptsFromHTML(authorData[0]["custom_code"].header_code, "afterInteractive") 
-  : "<></>";
+  // var headerScripts = authorData && authorData[0]["custom_code"] ? 
+  // injectScriptsFromHTML(authorData[0]["custom_code"].header_code, "afterInteractive") 
+  // : "<></>";
 
-  var footerScripts = authorData && authorData[0]["custom_code"] ? 
-  injectScriptsFromHTML(authorData[0]["custom_code"].footer_code, "lazyOnload")
-  : "<></>";
+  // var footerScripts = authorData && authorData[0]["custom_code"] ? 
+  // injectScriptsFromHTML(authorData[0]["custom_code"].footer_code, "lazyOnload")
+  // : "<></>";
 
-  const themeColour = authorData ? authorData[0]["theme_colour"] : "";
+  // const themeColour = authorData ? authorData[0]["theme_colour"] : "";
 
   return (
-    <html lang="en" className={`${themeColour} ${poppins.className}`} suppressContentEditableWarning={true} >
-      {headerScripts}
+    <html lang="en" className={` ${poppins.className}`} suppressContentEditableWarning={true} >
+      {/* {headerScripts} */}
       <body className={` bg-[#f8f8f8] text-base dark:bg-neutral-900/95 text-neutral-900 dark:text-neutral-200`}>
         <SubHeader2 
           domain1={domain1}
@@ -140,7 +140,7 @@ export default async function RootLayout({
           authors={authorData}
           menus={navigationData}
         />
-        {footerScripts}
+        {/* {footerScripts} */}
       </body>
     </html>
   );
